@@ -1,0 +1,66 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block titulo %}Smart City XR | Sistema SAPAM Inteligente{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
+    <div class="container">
+        
+        <div class="glass-panel text-center mb-5 relative overflow-hidden" style="border-top: 4px solid #f59e0b;">
+            <div style="position:absolute; inset:0; background: radial-gradient(circle at 50% 0%, rgba(245,158,11,0.1), transparent 70%); pointer-events:none;"></div>
+            <span class="badge mb-3" style="background:rgba(245,158,11,0.1); border:1px solid #f59e0b; color:#f59e0b;">Gestión Hídrica & Saneamiento</span>
+            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">Sistema SAPAM <span style="color:#f59e0b;">Inteligente</span></h1>
+            <p class="text-muted mx-auto" style="max-width:700px; font-size:1.1rem; line-height:1.7;">
+                Modernización integral de la red de agua potable y recolección de residuos con IA preventiva para combatir la escasez y mejorar la logística sanitaria en tiempo real.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="animate-fade-in delay-1">
+                <div class="glass-panel p-0 mb-4 overflow-hidden" style="border: 1px solid #f59e0b;">
+                    <img src="/media/cursos_img/cat_sapam.png" alt="Sistema SCADA de Saneamiento" style="width:100%; height:auto; display:block; filter: brightness(1.1) contrast(1.1);">
+                </div>
+                
+                <div class="glass-panel">
+                    <h4 class="text-white mb-3"><i class="fa-solid fa-water" style="color:#f59e0b;"></i> Despliegue Hídrico</h4>
+                    <ul style="list-style:none; padding:0; color:var(--text-main);">
+                        <li class="mb-2"><i class="fa-solid fa-faucet-drip text-blue mr-2"></i> Sensores acústicos de detección de fugas profundas</li>
+                        <li class="mb-2"><i class="fa-solid fa-flask text-neon mr-2"></i> Análisis espectrozónico en plantas tratadoras</li>
+                        <li class="mb-2"><i class="fa-solid fa-truck-fast text-gray mr-2"></i> Logística de GPS Dinámico para unidades recolectoras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="animate-fade-in delay-2">
+                <div class="glass-panel mb-4" style="border-left: 3px solid #f59e0b;">
+                    <h4 class="text-white mb-4"><i class="fa-solid fa-chart-pie" style="color:#f59e0b;"></i> Resultados e Impacto</h4>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Agua Reciclada y Tratada</p>
+                        <h2 class="text-white font-bold m-0">68% <span style="color:#f59e0b;" class="text-sm">del caudal en zona urbana</span></h2>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Ahorro en Fugas de Agua Potable</p>
+                        <h2 class="text-white font-bold m-0">1.2M <span class="text-blue text-sm">Litros recuperados diarios</span></h2>
+                    </div>
+                    
+                    <div>
+                        <p class="text-muted text-xs mb-1">Eficiencia Recolección Residuos</p>
+                        <h2 class="text-white font-bold m-0">+24% <span class="text-neon text-sm">Rediseño predictivo de rutas</span></h2>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <h5 class="text-white font-bold mb-2">Resiliencia Ante la Escasez</h5>
+                    <p class="text-muted text-sm" style="line-height:1.6;">
+                        El sistema integra datos del pronóstico meteorológico con el nivel de los embalses locales, ajustando la presión hídrica de manera automática. Esta sincronía entre válvulas motorizadas y el Dashboard Central evita roturas por sobrepresión y garantiza abasto en horas pico.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

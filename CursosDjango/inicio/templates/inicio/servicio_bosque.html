@@ -1,0 +1,68 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Micro-Bioma Botánico VR{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+    <!-- Hero 3D Model Viewer -->
+    <div class="relative w-full overflow-hidden mb-5" style="height: 420px; border-bottom: 2px solid var(--accent-neon); position: relative;">
+        <!-- Fondo cyberpunk con rejilla verde -->
+        <div style="position:absolute;inset:0;background: radial-gradient(circle at 50% 40%, rgba(50,205,50,0.2) 0%, rgba(6,11,25,0.95) 70%), linear-gradient(rgba(50,205,50,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(50,205,50,0.07) 1px, transparent 1px); background-size: 100% 100%, 35px 35px, 35px 35px;"></div>
+        
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <model-viewer 
+            src="/media/modelos_3d/bosque_simple.glb"
+            auto-rotate rotation-per-second="25deg"
+            camera-controls shadow-intensity="1" exposure="1.1"
+            style="position:absolute;inset:0;width:100%;height:100%;background-color:transparent;">
+        </model-viewer>
+
+        <!-- Overlay degradado y texto superpuesto -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(13,17,23,1) 0%, rgba(13,17,23,0.5) 50%, transparent 100%);pointer-events:none;"></div>
+        <div class="container relative h-100 d-flex flex-column justify-content-end pb-5" style="z-index:10;pointer-events:none;">
+            <span class="badge mb-2" style="width:fit-content;background:rgba(0,0,0,0.6);border:1px solid var(--accent-neon);color:var(--accent-neon);backdrop-filter:blur(4px);"><i class="fa-solid fa-vr-cardboard mr-2"></i>Módulo Adicional</span>
+            <h1 class="font-bold text-white mb-2" style="font-size:3rem;text-shadow:0 0 20px rgba(50,205,50,0.5);">Micro-Bioma Botánico</h1>
+            <p class="text-neon" style="font-size:1.2rem;">Experiencia Educativa Inmersiva · (Arrastra para explorar el modelo)</p>
+        </div>
+    </div>
+
+
+    <section class="pb-5">
+        <div class="container animate-fade-in">
+            <div class="glass-panel p-5 mb-5" style="border-left: 4px solid var(--accent-neon);">
+                <h3 class="text-white mb-4">Concientización a través de XR</h3>
+                <p class="text-muted text-lg mb-4" style="line-height: 1.8;">
+                    Este módulo adicional permite realizar excursiones mediante gafas de Realidad Virtual (VR) a las reservas ecológicas preservadas dentro y fuera de la ciudad. El objetivo es proporcionar educación ambiental interactiva con gráficos de alta fidelidad para ciudadanos y escuelas, sin afectar el ecosistema real.
+                </p>
+                <div class="row text-center mt-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-glasses text-neon mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">A-Frame Ready</h4>
+                            <p class="text-xs text-muted">Compatible con Oculus y WebXR.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-tree text-neon mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">Fidelidad 1:1</h4>
+                            <p class="text-xs text-muted">Escaneos LiDAR y Fotogrametría.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-graduation-cap text-neon mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">Impacto Social</h4>
+                            <p class="text-xs text-muted">+10,000 estudiantes beneficiados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="{% url 'servicios' %}" class="btn-cyber-outline" style="border-color: var(--accent-neon); color: var(--accent-neon);"><i class="fa-solid fa-arrow-left mr-2"></i> Volver al Hub Central</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

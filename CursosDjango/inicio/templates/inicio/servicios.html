@@ -1,0 +1,258 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Servicios{% endblock %}
+
+{% block contenido %}
+<style>
+    .servicio-card { 
+        text-decoration: none !important; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .servicio-card:hover { 
+        transform: translateY(-8px); 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 20px rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.4) !important;
+    }
+    .card-img-hover {
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .servicio-card:hover .card-img-hover { 
+        transform: scale(1.1); 
+    }
+    
+    .nav-pills-cyber {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .nav-pills-cyber span {
+        padding: 10px 25px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #adb5bd;
+        font-weight: 500;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(5px);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+    .nav-pills-cyber span.active {
+        background: linear-gradient(135deg, rgba(0,180,255,0.3) 0%, rgba(50,205,50,0.1) 100%);
+        border-color: var(--accent-blue);
+        color: #fff;
+        box-shadow: 0 0 15px rgba(0,180,255,0.3);
+    }
+    .nav-pills-cyber span:hover:not(.active) {
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.3);
+        color: #fff;
+    }
+    
+    /* Responsive Grid */
+    #grid-servicios {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        min-height: 400px;
+    }
+</style>
+
+<div style="padding-top: 100px; min-height: 80vh;">
+    <section class="pt-5 pb-5 animate-fade-in relative">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at 50% -20%, rgba(0,180,255,0.1), transparent 70%); pointer-events: none;"></div>
+        
+        <div class="container relative" style="z-index: 10;">
+            <div class="text-center mb-5">
+                <span class="badge badge-outline-blue mb-3">Red Neuronal Urbana</span>
+                <h1 class="font-bold text-white mb-3" style="font-size: 3.5rem; letter-spacing: 1px;">Hub Central de <span class="text-neon" style="text-shadow: 0 0 20px rgba(50,205,50,0.5);">Servicios</span></h1>
+                <p class="text-muted mx-auto" style="font-size: 1.15rem; max-width: 700px; line-height: 1.6;">Interactúa con el menú de filtros para consultar el portafolio completo del Gemelo Digital. Cada tarjeta es un acceso directo a nuestros módulos inmersivos y telemetría urbana.</p>
+            </div>
+            
+            <div class="nav-pills-cyber mb-5" id="filtros-servicios">
+                <span class="active" data-filter="all"><i class="fa-solid fa-layer-group mr-2"></i>Global</span>
+                <span data-filter="infra"><i class="fa-solid fa-road mr-2"></i>Infraestructura</span>
+                <span data-filter="verdes"><i class="fa-solid fa-leaf mr-2"></i>Áreas Verdes</span>
+                <span data-filter="tech"><i class="fa-solid fa-microchip mr-2"></i>Tecnología IoT</span>
+            </div>
+
+            <div id="grid-servicios">
+                
+                <!-- 1. Infraestructura: Vial (Principal) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="infra" data-main="true" style="overflow: hidden; border: 1px solid rgba(0,180,255,0.3);">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/city_digital_scan.png" style="width: 100%; height: 100%; object-fit: cover;" class="card-img-hover" alt="Simulación Vial">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid var(--accent-blue); color: var(--accent-blue);"><i class="fa-solid fa-road mr-1"></i> Infraestructura</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Simulación Vial 3D</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Ruteo predictivo de tráfico vehicular y transporte logístico urbano. Sistema en tiempo real impulsado por redes neuronales y data histórica.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-map text-blue mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Polígonos 3D</span></div>
+                            <div><i class="fa-solid fa-server text-blue mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Edge Cloud</span></div>
+                            <div><i class="fa-solid fa-check-circle text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Desplegado</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_vial' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px;">Acceder al Módulo <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- 2. Áreas Verdes: Parques (Principal) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="verdes" data-main="true" style="overflow: hidden; border: 1px solid rgba(50,205,50,0.3);">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/smart_park_3d.png" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(1.2) hue-rotate(5deg);" class="card-img-hover" alt="Parques Inteligentes">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid var(--accent-neon); color: var(--accent-neon);"><i class="fa-solid fa-leaf mr-1"></i> Áreas Verdes</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Parques Inteligentes</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Orquestación automática del riego e iluminación adaptativa. Genera ahorros hídricos y es carbono neutral para el ecosistema urbano.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-droplet text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Telemetría</span></div>
+                            <div><i class="fa-solid fa-wind text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Sensores IA</span></div>
+                            <div><i class="fa-solid fa-seedling text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">+120t CO2</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_parques' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px; border-color: rgba(50,205,50,0.5);">Acceder al Módulo <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <!-- 3. Tecnología: Redes IoT (Principal) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="tech" data-main="true" style="overflow: hidden; border: 1px solid rgba(157,78,221,0.3);">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/image copy 2.png" style="width: 100%; height: 100%; object-fit: cover;" class="card-img-hover" alt="Redes IoT">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid #9d4edd; color: #9d4edd;"><i class="fa-solid fa-satellite-dish mr-1"></i> Tecnología IoT</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Arquitectura IoT & 5G</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Integración troncal masiva de sensores M2M a través de nuestra red de antenas 5G y gabinetes Edge Computing descentralizados.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-wifi text-purple mb-1" style="font-size:1.2rem; color: #9d4edd;"></i><br><span class="text-muted">LoRaWAN</span></div>
+                            <div><i class="fa-solid fa-tower-broadcast text-purple mb-1" style="font-size:1.2rem; color: #9d4edd;"></i><br><span class="text-muted">Malla 5G</span></div>
+                            <div><i class="fa-solid fa-shield-halved text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">AES-256</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_iot' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px; border-color: rgba(157,78,221,0.5);">Acceder al Módulo <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- 4. Infraestructura: Residuos Sólidos (Adicional) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="infra" data-main="false" style="overflow: hidden; border: 1px solid rgba(0,180,255,0.1); display: none;">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/residuos_saneamiento_hub.png" style="width: 100%; height: 100%; object-fit: cover;" class="card-img-hover" alt="Gestión Residuos">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid var(--accent-blue); color: var(--accent-blue);"><i class="fa-solid fa-road mr-1"></i> Infraestructura</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Logística de Saneamiento</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Contenedores de basura geolocalizados y flotillas autónomas optimizadas para reducir la huella de carbono citadina en tiempo récord.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-truck-fast text-blue mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Flotilla EV</span></div>
+                            <div><i class="fa-solid fa-recycle text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Reciclaje AI</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_residuos' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px; border: 1px solid rgba(0,180,255,0.4); background: rgba(0,180,255,0.05); color: #fff;">Acceder al Módulo Adicional <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- 5. Áreas Verdes: Bosque VR (Adicional) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="verdes" data-main="false" style="overflow: hidden; border: 1px solid rgba(50,205,50,0.1); display: none;">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/bosque_virtual_hub.png" style="width: 100%; height: 100%; object-fit: cover;" class="card-img-hover" alt="Bioma Educativo">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid var(--accent-neon); color: var(--accent-neon);"><i class="fa-solid fa-leaf mr-1"></i> Áreas Verdes</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Micro-Bioma Botánico VR</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Experiencia inmersiva gamificada diseñada para la educación cívica. Tour hiperrealista en los bosques protegidos de la periferia metropolitana.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-vr-cardboard text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Realidad Virtual</span></div>
+                            <div><i class="fa-solid fa-tree text-neon mb-1" style="font-size:1.2rem;"></i><br><span class="text-muted">Reserva 3D</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_bosque' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px; border: 1px solid rgba(50,205,50,0.4); background: rgba(50,205,50,0.05); color: #fff;">Acceder al Módulo Adicional <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- 6. Tecnología: Ciberseguridad (Adicional) -->
+                <div class="glass-panel p-0 servicio-card" data-cat="tech" data-main="false" style="overflow: hidden; border: 1px solid rgba(157,78,221,0.1); display: none;">
+                    <div style="position: relative; height: 200px; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <img src="/media/cursos_img/soc_cyber_hub.png" style="width: 100%; height: 100%; object-fit: cover;" class="card-img-hover" alt="Seguridad Informática">
+                        <span class="badge" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); border: 1px solid #9d4edd; color: #9d4edd;"><i class="fa-solid fa-microchip mr-1"></i> Tecnología IoT</span>
+                    </div>
+                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h4 class="text-white mb-2 font-bold">Centro de Mando (SOC)</h4>
+                        <p class="text-muted text-sm mb-4" style="line-height: 1.5; flex-grow: 1;">Centro de Operaciones de Seguridad Neural Inteligente. Previene ataques DoS a la red de transporte y mitigación de intrusiones corporativas.</p>
+                        
+                        <div class="d-flex justify-content-between pt-3 mb-4 mt-auto text-xs text-center" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div><i class="fa-solid fa-user-secret text-purple mb-1" style="font-size:1.2rem; color:#9d4edd;"></i><br><span class="text-muted">Red Team</span></div>
+                            <div><i class="fa-solid fa-bug-slash text-purple mb-1" style="font-size:1.2rem; color:#9d4edd;"></i><br><span class="text-muted">Firewalls</span></div>
+                        </div>
+                        
+                        <a href="{% url 'servicio_soc' %}" class="btn-cyber w-100" style="padding: 12px; font-size: 0.95rem; text-align: center; border-radius: 4px; border: 1px solid rgba(157,78,221,0.4); background: rgba(157,78,221,0.05); color: #fff;">Acceder al Módulo Adicional <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-5 pt-5 border-top-dark">
+                 <a href="{% url 'catalogo' %}" class="btn-cyber" style="padding: 15px 40px; font-size: 1.1rem; box-shadow: 0 0 20px rgba(0,180,255,0.4);"><i class="fa-solid fa-cube mr-2"></i> Explorar Catálogo General</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const filtros = document.querySelectorAll("#filtros-servicios span");
+        const tarjetas = document.querySelectorAll(".servicio-card");
+
+        filtros.forEach(filtro => {
+            filtro.addEventListener("click", function() {
+                filtros.forEach(f => f.classList.remove("active"));
+                this.classList.add("active");
+
+                const cat = this.getAttribute("data-filter");
+
+                tarjetas.forEach(tarjeta => {
+                    const isMain = tarjeta.getAttribute("data-main") === "true";
+                    
+                    // Si el filtro es "all", mostramos solo las "main".
+                    // Si el filtro es específico, mostramos todas las que coincidan.
+                    let shouldShow = false;
+                    if (cat === "all") {
+                        shouldShow = isMain;
+                    } else {
+                        shouldShow = (tarjeta.getAttribute("data-cat") === cat);
+                    }
+
+                    if (shouldShow) {
+                        tarjeta.style.display = "flex";
+                        // Truco para reiniciar la animación CSS
+                        tarjeta.style.opacity = "0";
+                        tarjeta.style.transform = "scale(0.95)";
+                        setTimeout(() => { 
+                            tarjeta.style.opacity = "1"; 
+                            tarjeta.style.transform = "scale(1)";
+                            tarjeta.style.transition = "opacity 0.4s ease, transform 0.4s ease"; 
+                        }, 50);
+                    } else {
+                        tarjeta.style.display = "none";
+                        tarjeta.style.transition = "none"; // Eliminar transición para esconder de golpe
+                    }
+                });
+            });
+        });
+
+        // Trigger inicial visual (ya están con display:none desde HTML las extras, pero validamos)
+        document.querySelector('#filtros-servicios span[data-filter="all"]').click();
+    });
+</script>
+{% endblock %}

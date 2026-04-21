@@ -1,0 +1,69 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block titulo %}Smart City XR | Corredor Digital Camelinas{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
+    <div class="container">
+        
+        <!-- HEADER DEL PROYECTO -->
+        <div class="glass-panel text-center mb-5 relative overflow-hidden" style="border-top: 4px solid var(--accent);">
+            <div style="position:absolute; inset:0; background: radial-gradient(circle at 50% 0%, rgba(0,180,255,0.1), transparent 70%); pointer-events:none;"></div>
+            <span class="badge badge-outline-blue mb-3">Movilidad y Tránsito</span>
+            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">Corredor Digital <span class="text-blue">Camelinas</span></h1>
+            <p class="text-muted mx-auto" style="max-width:700px; font-size:1.1rem; line-height:1.7;">
+                Monitoreo continuo de flujo vehicular, sincronización de semáforos mediante IA y gestión adaptativa de tráfico para reducir las emisiones de carbono en Morelia.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- COLUMNA IZQUIERDA (Imagen y Diagrama) -->
+            <div class="animate-fade-in delay-1">
+                <div class="glass-panel p-0 mb-4 overflow-hidden" style="border: 1px solid var(--accent);">
+                    <img src="/media/cursos_img/cat_movilidad.png" alt="Corredor Digital" style="width:100%; height:auto; display:block; filter: brightness(1.1) contrast(1.1);">
+                </div>
+                
+                <div class="glass-panel">
+                    <h4 class="text-white mb-3"><i class="fa-solid fa-microchip text-blue"></i> Componentes Instalados</h4>
+                    <ul style="list-style:none; padding:0; color:var(--text-main);">
+                        <li class="mb-2"><i class="fa-solid fa-camera text-neon mr-2"></i> 86 sensores de visión por computadora</li>
+                        <li class="mb-2"><i class="fa-solid fa-traffic-light text-neon mr-2"></i> 12 intersecciones sincronizadas con IA</li>
+                        <li class="mb-2"><i class="fa-solid fa-server text-neon mr-2"></i> Nodos de procesamiento en la frontera (Edge Computing)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA (Métricas y Detalles) -->
+            <div class="animate-fade-in delay-2">
+                <div class="glass-panel mb-4" style="border-left: 3px solid var(--accent-neon);">
+                    <h4 class="text-white mb-4"><i class="fa-solid fa-chart-line text-neon"></i> Impacto en Tiempo Real</h4>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Reducción de Tiempo de Traslado</p>
+                        <h2 class="text-white font-bold m-0">18% <span class="text-neon text-sm">↑ Mejora frente a 2024</span></h2>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Volumen Vehicular Diario Analizado</p>
+                        <h2 class="text-white font-bold m-0">45,200 <span class="text-blue text-sm">vehículos</span></h2>
+                    </div>
+                    
+                    <div>
+                        <p class="text-muted text-xs mb-1">Optimización de Emisiones CO2</p>
+                        <h2 class="text-white font-bold m-0">-12% <span class="text-neon text-sm">Emisiones en bloqueos</span></h2>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <h5 class="text-white font-bold mb-2">Fase de Integración</h5>
+                    <p class="text-muted text-sm" style="line-height:1.6;">
+                        El Corredor Camelinas fue la primera arteria vial integrada al Gemelo Digital del Ayuntamiento. Su infraestructura permite redireccionar el tráfico automáticamente en caso de siniestros, comunicándose directamente con el Centro de Operaciones C5 de la Policía de Morelia y los servicios de emergencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

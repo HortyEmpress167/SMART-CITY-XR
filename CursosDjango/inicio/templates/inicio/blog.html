@@ -1,0 +1,87 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Blog Urbano{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+    <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="text-center mb-5 animate-fade-in">
+                <h2 class="text-white font-bold" style="font-size: 2.8rem; letter-spacing: 1px;">Novedades <span class="text-neon" style="text-shadow: 0 0 15px rgba(50,205,50,0.5);">Smart City XR</span></h2>
+                <p class="text-muted mt-2" style="font-size: 1.1rem;">Explora los últimos avances de integración urbana y tecnologías inmersivas.</p>
+            </div>
+            
+            <div class="row" style="display: flex; flex-wrap: wrap; gap: 25px; align-items: stretch;">
+                
+                <!-- Artículo Principal (Destacado) -->
+                <div class="glass-panel animate-fade-in delay-1" style="flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 20px; padding: 0; overflow: hidden; border: 1px solid rgba(0, 180, 255, 0.4); box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 50px rgba(0,180,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.3)';">
+                    <div style="flex: 1; min-width: 300px; position: relative;">
+                        <img src="/media/cursos_img/smart_park_3d.png" alt="Blog" style="width:100%; height: 100%; object-fit: cover; display: block; border-right: 1px solid rgba(255,255,255,0.05);">
+                        <div style="position: absolute; top: 15px; left: 15px;">
+                            <span class="badge" style="background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); color: var(--accent-neon); border: 1px solid var(--accent-neon);">🔥 Destacado</span>
+                        </div>
+                    </div>
+                    <div style="flex: 1.5; min-width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="d-flex align-items-center mb-3" style="gap: 15px;">
+                            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Sustentabilidad</span>
+                            <span class="text-muted" style="font-size: 0.85rem;"><i class="far fa-calendar-alt mr-1"></i> Hoy</span>
+                        </div>
+                        <h3 class="text-white font-bold mb-3" style="font-size: 2rem; line-height: 1.2;">Caso de Éxito: Parque Verde con Gemelo Digital 3D</h3>
+                        <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.6;">Uso de tecnologías inmersivas para simular la iluminación sustentable interactiva. Analizamos cómo los ciudadanos logran reportar un incremento en confort en un 35% durante los recorridos virtuales piloto.</p>
+                        <div>
+                            <a href="{% url 'blog_parque_verde' %}" class="btn-cyber" style="text-decoration: none; padding: 12px 30px; border-radius: 8px;">Leer Artículo Completo <i class="fas fa-arrow-right ml-2" style="margin-left: 8px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tres Artículos Secundarios Masonry -->
+                <div class="masonry-grid w-100 mt-4 animate-fade-in delay-2">
+                    
+                    <!-- Articulo 1 -->
+                    <div class="masonry-item" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; background: rgba(10, 25, 55, 0.5); padding: 30px; transition: all 0.4s ease;">
+                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent-neon);"></div>
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="badge badge-outline-green">Movilidad</span>
+                                <span class="text-muted text-xs"><i class="far fa-clock"></i> Hace 2 días</span>
+                            </div>
+                            <h4 class="text-white font-semibold mb-3" style="font-size: 1.35rem;">Avances en Movilidad Autónoma</h3>
+                            <p class="text-muted text-sm" style="line-height: 1.7;">Implementamos nuevos sensores en el centro histórico para reducir el tráfico vehicular en un 20% utilizando inteligencia artificial conectada al sistema de semáforos.</p>
+                        </div>
+                        <a href="{% url 'blog_movilidad' %}" style="color: var(--accent-neon); text-decoration: none; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; transition: text-shadow 0.3s;" onmouseover="this.style.textShadow='0 0 10px rgba(50,205,50,0.8)'" onmouseout="this.style.textShadow='none'">LEER MÁS <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+                    
+                    <!-- Articulo 2 -->
+                    <div class="masonry-item" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; background: rgba(10, 25, 55, 0.5); padding: 30px; transition: all 0.4s ease;">
+                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent);"></div>
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="badge badge-outline-blue" style="border-color: var(--accent); color: var(--accent);">Educación</span>
+                                <span class="text-muted text-xs"><i class="far fa-clock"></i> Hace 1 semana</span>
+                            </div>
+                            <h4 class="text-white font-semibold mb-3" style="font-size: 1.35rem;">¿Qué es el Escaneo Digital Lidar?</h3>
+                            <p class="text-muted text-sm" style="line-height: 1.7;">Descubre cómo los drones y sistemas láser están mapeando nuestras ciudades para crear gemelos digitales perfectos y ayudar en la mitigación de problemas urbanos de manera preventiva.</p>
+                        </div>
+                        <a href="{% url 'blog_lidar' %}" style="color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; transition: text-shadow 0.3s;" onmouseover="this.style.textShadow='0 0 10px rgba(0,180,255,0.8)'" onmouseout="this.style.textShadow='none'">LEER MÁS <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+
+                    <!-- Articulo 3 -->
+                    <div class="masonry-item" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; background: rgba(10, 25, 55, 0.5); padding: 30px; transition: all 0.4s ease;">
+                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #ff007f;"></div>
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="badge" style="background: rgba(255,0,127,0.1); color: #ff007f; border: 1px solid rgba(255,0,127,0.3);">Actualización</span>
+                                <span class="text-muted text-xs"><i class="far fa-clock"></i> Hace 2 semanas</span>
+                            </div>
+                            <h4 class="text-white font-semibold mb-3" style="font-size: 1.35rem;">Sistema Analítico Urbano V2.1</h3>
+                            <p class="text-muted text-sm" style="line-height: 1.7;">Hemos integrado nuevos filtros de simulación de datos de calidad del aire en tiempo real directamente sobre los modelos 3D y añadido un sistema de votación para ciudadanos registrados.</p>
+                        </div>
+                        <a href="{% url 'blog_sav21' %}" style="color: #ff007f; text-decoration: none; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; transition: text-shadow 0.3s;" onmouseover="this.style.textShadow='0 0 10px rgba(255,0,127,0.8)'" onmouseout="this.style.textShadow='none'">LEER MÁS <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

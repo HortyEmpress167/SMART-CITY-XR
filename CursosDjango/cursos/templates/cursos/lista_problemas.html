@@ -1,0 +1,325 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Reportes Ciudadanos{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 90vh;">
+
+    <!-- HERO HEADER -->
+    <div style="position: relative; overflow: hidden; border-bottom: 2px solid var(--accent-neon); padding: 60px 0 50px;">
+        <div style="position: absolute; inset:0; background: radial-gradient(circle at 70% 50%, rgba(50,205,50,0.07), transparent 60%), radial-gradient(circle at 20% 20%, rgba(0,180,255,0.05), transparent 50%); pointer-events:none;"></div>
+        <div class="container text-center relative" style="z-index:2;">
+            <div class="mb-3">
+                <span class="badge" style="background:rgba(50,205,50,0.1); border:1px solid var(--accent-neon); color:var(--accent-neon); font-size:0.8rem; letter-spacing:2px;">PARTICIPACIÓN CIUDADANA</span>
+            </div>
+            <h1 class="text-white font-bold mb-3" style="font-size:3rem; letter-spacing:1px;">
+                Reportes de <span class="text-neon" style="text-shadow: 0 0 20px rgba(50,205,50,0.5);">Prioridad Urbana</span>
+            </h1>
+            <p class="text-muted mx-auto mb-5" style="font-size:1.1rem; max-width:600px; line-height:1.7;">
+                Vota por las problemáticas que consideres requieren intervención urgente. Tu voto escala el caso al equipo de respuesta del Gemelo Digital.
+            </p>
+            <a href="{% url 'reportes:reportar_problema' %}" class="btn-cyber" style="padding:14px 35px; font-size:1.05rem; background:linear-gradient(135deg, rgba(50,205,50,0.8), rgba(0,200,80,0.8)); border-color:rgba(50,205,50,0.5); box-shadow:0 0 20px rgba(50,205,50,0.3);">
+                <i class="fa-solid fa-plus-circle mr-1"></i> Nuevo Reporte
+            </a>
+        </div>
+    </div>
+
+    <!-- DASHBOARD DE ANÁLISIS CYBERPUNK -->
+    <section class="pt-5 pb-2">
+        <div class="container animate-fade-in delay-1" style="max-width:900px;">
+            
+            <!-- Título del dashboard -->
+            <div class="text-center mb-4">
+                <span class="badge" style="background: rgba(0,180,255,0.08); border: 1px solid rgba(0,180,255,0.4); color: var(--accent-blue); letter-spacing: 2px; font-size: 0.75rem; padding: 6px 16px;">
+                    <i class="fa-solid fa-chart-column mr-1"></i> PANEL DE ANÁLISIS OPERATIVO
+                </span>
+            </div>
+
+            <!-- Grid del dashboard: KPIs + Gráfica -->
+            <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 20px; align-items: start;">
+
+                <!-- COLUMNA IZQUIERDA: KPI Cards verticales -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+
+                    <!-- KPI 1: Total Reportes -->
+                    <div class="glass-panel" style="padding: 20px; border: 1px solid rgba(0,180,255,0.25); border-left: 4px solid #00b4ff; position: relative; overflow: hidden;">
+                        <div style="position:absolute;top:-15px;right:-15px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,255,0.2),transparent 70%);pointer-events:none;"></div>
+                        <div style="display:flex;align-items:center;gap:14px;">
+                            <div style="background:rgba(0,180,255,0.12);width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-tower-broadcast" style="color:#00b4ff;font-size:1.3rem;"></i>
+                            </div>
+                            <div>
+                                <p class="text-muted mb-0" style="font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;">Reportes Totales</p>
+                                <h2 class="text-white font-bold mb-0" style="font-size:2.2rem;line-height:1;text-shadow:0 0 12px rgba(0,180,255,0.4);">{{ total_reportes }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI 2: Votos (neon verde, el más importante) -->
+                    <div class="glass-panel" style="padding: 20px; border: 1px solid rgba(50,205,50,0.3); border-left: 4px solid #32cd32; position: relative; overflow: hidden;">
+                        <div style="position:absolute;top:-15px;right:-15px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(50,205,50,0.2),transparent 70%);pointer-events:none;"></div>
+                        <div style="display:flex;align-items:center;gap:14px;">
+                            <div style="background:rgba(50,205,50,0.12);width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-fingerprint" style="color:#32cd32;font-size:1.3rem;filter:drop-shadow(0 0 6px rgba(50,205,50,0.6));"></i>
+                            </div>
+                            <div>
+                                <p class="text-muted mb-0" style="font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;">Votos Ciudadanos</p>
+                                <h2 class="font-bold mb-0" style="font-size:2.2rem;line-height:1;color:#32cd32;text-shadow:0 0 20px rgba(50,205,50,0.5);">{{ total_votos }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI 3: Efectividad -->
+                    <div class="glass-panel" style="padding: 20px; border: 1px solid rgba(0,245,212,0.25); border-left: 4px solid #00f5d4; position: relative; overflow: hidden;">
+                        <div style="position:absolute;top:-15px;right:-15px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(0,245,212,0.15),transparent 70%);pointer-events:none;"></div>
+                        <p class="text-muted mb-2" style="font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;"><i class="fa-solid fa-bolt mr-1" style="color:#00f5d4;"></i> Efectividad de Resolución</p>
+                        <!-- Barra de progreso premium -->
+                        <div style="background:rgba(0,0,0,0.4);border-radius:20px;height:12px;border:1px solid rgba(0,245,212,0.2);margin-bottom:8px;overflow:hidden;">
+                            <div id="eff-bar" style="width:0%;height:100%;background:linear-gradient(90deg,#00b4ff,#00f5d4);border-radius:20px;box-shadow:0 0 12px rgba(0,245,212,0.6);transition:width 1.4s cubic-bezier(0.2,0.8,0.2,1);"></div>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="text-muted text-xs"><i class="fa-solid fa-check-circle mr-1" style="color:#00f5d4;"></i>{{ resueltos }} Casos Cerrados</span>
+                            <span style="color:#00f5d4;font-weight:bold;font-size:1.1rem;">{{ tasa_efectividad }}%</span>
+                        </div>
+                    </div>
+
+                </div><!-- /KPI Column -->
+
+                <!-- COLUMNA DERECHA: Gráfica de Barras + Donut -->
+                <div style="display:flex;flex-direction:column;gap:15px;">
+
+                    <!-- Gráfica de barras por estado -->
+                    <div class="glass-panel" style="padding: 20px; border: 1px solid rgba(0,180,255,0.2);">
+                        <p class="text-white mb-3 font-bold" style="font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase;"><i class="fa-solid fa-chart-bar text-blue mr-2"></i>Distribución por Estado</p>
+                        <div style="position:relative;height:180px;">
+                            <canvas id="statusBarChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfica de donut (resolución) -->
+                    <div class="glass-panel" style="padding: 20px; border: 1px solid rgba(0,180,255,0.2);">
+                        <p class="text-white mb-3 font-bold" style="font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase;"><i class="fa-solid fa-circle-half-stroke text-blue mr-2"></i>Índice de Resolución</p>
+                        <div style="display:flex;align-items:center;gap:20px;">
+                            <div style="position:relative;width:120px;height:120px;flex-shrink:0;">
+                                <canvas id="resolutionDonut"></canvas>
+                                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;">
+                                    <span style="font-size:1.4rem;font-weight:800;color:#00f5d4;text-shadow:0 0 10px rgba(0,245,212,0.5);">{{ tasa_efectividad }}%</span>
+                                </div>
+                            </div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                                    <div style="width:12px;height:12px;border-radius:3px;background:#00f5d4;box-shadow:0 0 6px rgba(0,245,212,0.6);flex-shrink:0;"></div>
+                                    <span class="text-muted text-xs">Resueltos <span class="text-white font-bold ml-1">{{ resueltos }}</span></span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                                    <div style="width:12px;height:12px;border-radius:3px;background:#f59e0b;box-shadow:0 0 6px rgba(245,158,11,0.6);flex-shrink:0;"></div>
+                                    <span class="text-muted text-xs">Desplegando <span class="text-white font-bold ml-1">{{ cnt_desplegando }}</span></span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                                    <div style="width:12px;height:12px;border-radius:3px;background:#00b4ff;box-shadow:0 0 6px rgba(0,180,255,0.6);flex-shrink:0;"></div>
+                                    <span class="text-muted text-xs">En Revisión <span class="text-white font-bold ml-1">{{ cnt_revision }}</span></span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <div style="width:12px;height:12px;border-radius:3px;background:#00e5ff;box-shadow:0 0 8px rgba(0,229,255,0.8);flex-shrink:0;"></div>
+                                    <span class="text-muted text-xs">Recibidos <span class="text-white font-bold ml-1">{{ cnt_recibido }}</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /Chart Column -->
+            </div><!-- /Dashboard Grid -->
+        </div>
+    </section>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Animar barra de efectividad
+        setTimeout(() => {
+            document.getElementById('eff-bar').style.width = '{{ tasa_efectividad }}%';
+        }, 300);
+
+        // Paleta de colores cyberpunk
+        const colors = {
+            recibido:    { bg: 'rgba(0,229,255,0.35)',  border: 'rgba(0,229,255,1)',  glow: 'rgba(0,229,255,0.5)' },
+            revision:    { bg: 'rgba(0,180,255,0.35)',  border: 'rgba(0,180,255,1)',  glow: 'rgba(0,180,255,0.5)' },
+            desplegando: { bg: 'rgba(245,158,11,0.35)', border: 'rgba(245,158,11,1)', glow: 'rgba(245,158,11,0.5)' },
+            resuelto:    { bg: 'rgba(0,245,212,0.35)',  border: 'rgba(0,245,212,1)',  glow: 'rgba(0,245,212,0.5)' },
+        };
+
+        const chartDefaults = {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: { duration: 1200, easing: 'easeOutQuart' },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: 'rgba(6,11,25,0.9)',
+                    borderColor: 'rgba(0,180,255,0.5)',
+                    borderWidth: 1,
+                    titleColor: '#ffffff',
+                    bodyColor: '#aaaaaa',
+                    padding: 10,
+                }
+            }
+        };
+
+        // ---- GRÁFICA DE BARRAS ----
+        const barCtx = document.getElementById('statusBarChart').getContext('2d');
+
+        // Plugin para glow en las barras
+        const glowPlugin = {
+            id: 'barGlow',
+            afterDatasetsDraw(chart) {
+                const ctx = chart.ctx;
+                ctx.save();
+                chart.data.datasets[0].borderColor.forEach((color, i) => {
+                    const meta = chart.getDatasetMeta(0);
+                    if (meta.data[i]) {
+                        ctx.shadowColor = color;
+                        ctx.shadowBlur = 15;
+                        meta.data[i].draw(ctx);
+                    }
+                });
+                ctx.restore();
+            }
+        };
+
+        new Chart(barCtx, {
+            type: 'bar',
+            plugins: [glowPlugin],
+            data: {
+                labels: ['Recibido', 'En Revisión', 'Desplegando', 'Resuelto'],
+                datasets: [{
+                    data: [{{ cnt_recibido }}, {{ cnt_revision }}, {{ cnt_desplegando }}, {{ resueltos }}],
+                    backgroundColor: [
+                        colors.recibido.bg, colors.revision.bg,
+                        colors.desplegando.bg, colors.resuelto.bg
+                    ],
+                    borderColor: [
+                        colors.recibido.border, colors.revision.border,
+                        colors.desplegando.border, colors.resuelto.border
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                ...chartDefaults,
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
+                        ticks: { color: '#888', font: { size: 11 } }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,180,255,0.08)', drawBorder: false },
+                        ticks: { color: '#888', font: { size: 11 }, stepSize: 1 }
+                    }
+                }
+            }
+        });
+
+        // ---- DONUT RESOLUCIÓN ----
+        const donutCtx = document.getElementById('resolutionDonut').getContext('2d');
+        const pending  = Math.max(0, {{ total_reportes }} - {{ resueltos }});
+        const resolved = {{ resueltos }};
+
+        new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [resolved, pending || (resolved === 0 ? 1 : 0)],
+                    backgroundColor: [
+                        'rgba(0,245,212,0.7)',
+                        'rgba(255,255,255,0.06)'
+                    ],
+                    borderColor: [
+                        'rgba(0,245,212,1)',
+                        'rgba(255,255,255,0.1)'
+                    ],
+                    borderWidth: 2,
+                    hoverOffset: 6,
+                }]
+            },
+            options: {
+                ...chartDefaults,
+                cutout: '72%',
+                plugins: { ...chartDefaults.plugins, tooltip: { ...chartDefaults.plugins.tooltip, enabled: false } }
+            }
+        });
+
+    });
+    </script>
+
+    <!-- LISTA DE REPORTES -->
+    <section class="pt-2 pb-5">
+        <div class="container animate-fade-in" style="max-width:900px;">
+
+            {% for problema in problemas %}
+            <!-- Tarjeta de reporte -->
+            <div class="glass-panel p-0 mb-4" style="overflow:hidden; border:1px solid rgba(0,180,255,0.2); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(50,205,50,0.4)'; this.style.boxShadow='0 15px 40px rgba(50,205,50,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,180,255,0.2)'; this.style.boxShadow='none';">
+                <div style="display:flex; align-items:stretch;">
+
+                    <!-- Barra de estado lateral -->
+                    <div style="width:5px; flex-shrink:0; background: {% if problema.estado == 'Resuelto' %}var(--accent-neon){% elif problema.estado == 'Desplegando' %}#f59e0b{% elif problema.estado == 'Revisión' %}var(--accent-blue){% else %}rgba(255,255,255,0.3){% endif %};"></div>
+
+                    <!-- Contenido principal -->
+                    <div style="flex:1; padding:25px 30px; display:flex; gap:20px; align-items:center;">
+
+                        <!-- Texto -->
+                        <div style="flex:1;">
+                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap;">
+                                <h4 class="text-white font-bold" style="font-size:1.15rem; margin:0;">{{ problema.titulo }}</h4>
+                                <!-- Badge estado -->
+                                <span class="badge" style="font-size:0.7rem; padding:3px 10px;
+                                    {% if problema.estado == 'Resuelto' %}background:rgba(50,205,50,0.15); border:1px solid var(--accent-neon); color:var(--accent-neon);
+                                    {% elif problema.estado == 'Desplegando' %}background:rgba(245,158,11,0.15); border:1px solid #f59e0b; color:#f59e0b;
+                                    {% elif problema.estado == 'Revisión' %}background:rgba(0,180,255,0.15); border:1px solid var(--accent-blue); color:var(--accent-blue);
+                                    {% else %}background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.2); color:var(--text-muted);{% endif %}">
+                                    {{ problema.estado }}
+                                </span>
+                            </div>
+                            <p class="text-muted text-sm mb-2" style="line-height:1.6;">{{ problema.descripcion|truncatechars:140 }}</p>
+                            <small class="text-muted" style="font-size:0.78rem;">
+                                <i class="fa-solid fa-clock mr-1"></i> {{ problema.fecha_reporte|date:"d M Y · H:i" }}
+                                {% if problema.latitud %}
+                                &nbsp;·&nbsp; <i class="fa-solid fa-location-dot mr-1"></i> GPS disponible
+                                {% endif %}
+                            </small>
+                        </div>
+
+                        <!-- Panel de votos -->
+                        <div style="flex-shrink:0; text-align:center; min-width:80px;">
+                            <p class="text-white font-bold mb-1" style="font-size:2rem; line-height:1; text-shadow:0 0 15px rgba(50,205,50,0.4);">{{ problema.votos }}</p>
+                            <p class="text-muted" style="font-size:0.7rem; letter-spacing:1px; margin-bottom:10px;">VOTOS</p>
+                            <a href="{% url 'reportes:votar_problema' problema.id %}" title="Votar +1"
+                               style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(50,205,50,0.15); border:1px solid var(--accent-neon); border-radius:50%; color:var(--accent-neon); font-size:1.1rem; text-decoration:none; transition:all 0.2s ease;"
+                               onmouseover="this.style.background='rgba(50,205,50,0.35)'; this.style.boxShadow='0 0 15px rgba(50,205,50,0.5)'; this.style.transform='scale(1.1)';"
+                               onmouseout="this.style.background='rgba(50,205,50,0.15)'; this.style.boxShadow='none'; this.style.transform='scale(1)';">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Estado vacío -->
+            <div class="glass-panel text-center p-5" style="border:1px dashed rgba(255,255,255,0.15);">
+                <i class="fa-solid fa-shield-exclamation text-neon mb-4" style="font-size:3.5rem; opacity:0.5;"></i>
+                <h3 class="text-white font-bold mb-2">Sin reportes activos</h3>
+                <p class="text-muted mb-4">¡Sé el primero en reportar un problema y activar el sistema de intervención ciudadana!</p>
+                <a href="{% url 'reportes:reportar_problema' %}" class="btn-cyber" style="background:linear-gradient(135deg, rgba(50,205,50,0.8), rgba(0,200,80,0.8)); border-color:rgba(50,205,50,0.5);">
+                    <i class="fa-solid fa-plus-circle mr-1"></i> Crear primer reporte
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+</div>
+{% endblock %}

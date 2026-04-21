@@ -1,0 +1,148 @@
+/* --- Paleta de Colores Inspirada en el Logo ---
+   Dorado Principal: #c5a059
+   Dorado Suave:    #e2c275
+   Fondo Oscuro:    #1a1a1b (Un negro azulado muy profundo)
+   Gris Carbón:     #2d2d2e
+----------------------------------------------- */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa; /* Un gris casi blanco para limpieza */
+    color: #2d2d2e;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+header {
+    background: #1a1a1b; /* Negro profundo del logo */
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 3px solid #c5a059; /* Línea decorativa dorada */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/* Logo y Título */
+.logo-titulo h1 {
+    color: #e2c275; /* Texto en dorado suave */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c5a059; /* Cambio a dorado al pasar el mouse */
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    margin: 2rem auto;
+    flex: 1;
+}
+
+/* Grid de Cursos */
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-top: 4px solid #c5a059; /* Resalte dorado al hacer hover */
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.2);
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #c5a059; /* Botón dorado */
+    color: #1a1a1b;      /* Texto oscuro para contraste */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e2c275; /* Dorado más brillante */
+}
+
+/* Footer */
+footer {
+    background: #1a1a1b;
+    color: #e2c275;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+/* Estilos de Imagen y Logo */
+.banner-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-nav {
+    height: 50px;
+    width: auto;
+    border: 1px solid #c5a059; /* Bordado dorado sutil */
+    border-radius: 50%;
+    padding: 2px;
+}
