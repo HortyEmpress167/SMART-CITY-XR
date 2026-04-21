@@ -1,4 +1,4 @@
-{% extends 'inicio/base.html' %}
+﻿{% extends 'inicio/base.html' %}
 
 {% block titulo %}Smart City XR | Redes IoT{% endblock %}
 
@@ -22,7 +22,7 @@
         background-position: center center;
     }
 
-    /* Línea de escáner horizontal */
+    /* LÃ­nea de escÃ¡ner horizontal */
     @keyframes scanline {
         0% { transform: translateY(-100%); }
         100% { transform: translateY(400px); }
@@ -45,10 +45,10 @@
             
             <!-- ENCABEZADO PRINCIPAL -->
             <div class="text-center mb-5 animate-fade-in">
-                <span class="badge badge-outline-blue mb-3" style="font-size: 0.9rem; padding: 6px 12px; border: 1px solid var(--accent-blue);"><i class="fa-solid fa-network-wired mr-1"></i> Nodo Core Tecnológico</span>
-                <h1 class="mb-3 font-bold" style="font-size: 3.5rem;">Redes e Integración <span class="text-blue" style="text-shadow: 0 0 20px rgba(0,180,255,0.5);">IoT</span></h1>
+                <span class="badge badge-outline-blue mb-3" style="font-size: 0.9rem; padding: 6px 12px; border: 1px solid var(--accent-blue);"><i class="fa-solid fa-network-wired mr-1"></i> Nodo Core TecnolÃ³gico</span>
+                <h1 class="mb-3 font-bold" style="font-size: 3.5rem;">Redes e IntegraciÃ³n <span class="text-blue" style="text-shadow: 0 0 20px rgba(0,180,255,0.5);">IoT</span></h1>
                 <p class="text-muted mx-auto" style="max-width: 750px; font-size: 1.15rem; line-height: 1.6;">
-                    Arquitectura de conectividad de misión crítica. Desplegamos mallas de sensores urbanos de alta densidad, integrando protocolos IoT con infraestructura perimetral (Edge Computing) para una respuesta urbana instantánea.
+                    Arquitectura de conectividad de misiÃ³n crÃ­tica. Desplegamos mallas de sensores urbanos de alta densidad, integrando protocolos IoT con infraestructura perimetral (Edge Computing) para una respuesta urbana instantÃ¡nea.
                 </p>
             </div>
             
@@ -63,11 +63,11 @@
                         <!-- Import Google's Model Viewer Web Component -->
                         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
                         
-                        <!-- Contenedor con el fondo azul tech cibernético -->
+                        <!-- Contenedor con el fondo azul tech cibernÃ©tico -->
                         <div style="position: relative; height: 380px; width: 100%; border-radius: 10px; background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.25) 0%, rgba(6, 11, 25, 0.8) 100%), linear-gradient(rgba(0, 180, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 180, 255, 0.1) 1px, transparent 1px); background-size: 100% 100%, 30px 30px, 30px 30px;">
                             
                             <model-viewer 
-                                src="/media/modelos_3d/bosque_meca.glb" 
+                                src="https://raw.githubusercontent.com/HortyEmpress167/SMART-CITY-XR/master/CursosDjango/media/modelos_3d/bosque_meca.glb" 
                                 auto-rotate 
                                 rotation-per-second="30deg"
                                 camera-controls 
@@ -76,7 +76,7 @@
                                 style="width:100%; height:100%; background-color: transparent;">
                             </model-viewer>
 
-                            <!-- Scanner Line Automático (Efecto Cyber retenido) -->
+                            <!-- Scanner Line AutomÃ¡tico (Efecto Cyber retenido) -->
                             <div class="scanner-line"></div>
 
                             <!-- Placa superior flotante -->
@@ -84,7 +84,7 @@
                                 <span class="badge" style="background: rgba(0,0,20,0.8); border: 1px solid var(--accent-blue); color: var(--accent-blue); box-shadow: 0 0 10px rgba(0,180,255,0.4); backdrop-filter: blur(5px);"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Renderizando Modelo Meca</span>
                             </div>
                             
-                            <!-- Panel de texto dinámico inferior -->
+                            <!-- Panel de texto dinÃ¡mico inferior -->
                             <div id="iot-text-box" style="position: absolute; bottom: 20px; left: 20px; right: 20px; padding: 15px; background: rgba(0,20,40,0.85); backdrop-filter: blur(10px); border-left: 4px solid var(--accent-blue); border-radius: 6px; pointer-events: none; z-index: 10;">
                                 <div class="d-flex justify-content-between align-items-end mb-1">
                                     <h5 class="text-white m-0" style="font-family: monospace; letter-spacing: 1px;">SYS_CORE_ONLINE</h5>
@@ -113,7 +113,7 @@
                 <!-- COLUMNA DERECHA: Desglose de Funciones IoT -->
                 <div class="animate-fade-in delay-2" style="display: flex; flex-direction: column; gap: 20px;">
                     
-                    <!-- Tarjeta 1: Redes Inalámbricas -->
+                    <!-- Tarjeta 1: Redes InalÃ¡mbricas -->
                     <div class="glass-panel feature-card-hover" style="border-left: 3px solid var(--accent-blue);">
                         <div style="display: flex; align-items: flex-start; gap: 15px;">
                             <div style="background: rgba(0,180,255,0.1); padding: 15px; border-radius: 12px; min-width: 60px; text-align: center;">
@@ -123,7 +123,7 @@
                                 <h5 class="text-white mb-1">Mallas LoRaWAN y 5G Privado</h5>
                                 <p class="text-xs text-blue mb-2">Cobertura Ininterrumpida Multiprotocolo</p>
                                 <p class="text-sm text-muted m-0 line-height-15">
-                                    Desplegamos infraestructura de radio de baja potencia para sensores pasivos (LoRaWAN), respaldados por celdas 5G Edge para transmisiones de video en tiempo real sin congestión por tráfico civil.
+                                    Desplegamos infraestructura de radio de baja potencia para sensores pasivos (LoRaWAN), respaldados por celdas 5G Edge para transmisiones de video en tiempo real sin congestiÃ³n por trÃ¡fico civil.
                                 </p>
                             </div>
                         </div>
@@ -139,13 +139,13 @@
                                 <h5 class="text-white mb-1">Arquitectura Edge Computing</h5>
                                 <p class="text-xs mb-2" style="color: #00f5d4;">Procesamiento Descentralizado</p>
                                 <p class="text-sm text-muted m-0 line-height-15">
-                                    Las decisiones críticas no viajan a la red central; los gabinetes Edge en cada nodo vial procesan la información de emergencias instantáneamente, anulando tiempos de respuesta lentos.
+                                    Las decisiones crÃ­ticas no viajan a la red central; los gabinetes Edge en cada nodo vial procesan la informaciÃ³n de emergencias instantÃ¡neamente, anulando tiempos de respuesta lentos.
                                 </p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Tarjeta 3: Centro de Mando / Estadísticas -->
+                    <!-- Tarjeta 3: Centro de Mando / EstadÃ­sticas -->
                     <div class="glass-panel feature-card-hover" style="border-left: 3px solid #9d4edd;">
                         <div style="display: flex; align-items: flex-start; gap: 15px;">
                             <div style="background: rgba(157,78,221,0.1); padding: 15px; border-radius: 12px; min-width: 60px; text-align: center;">
@@ -153,17 +153,17 @@
                             </div>
                             <div style="flex-grow: 1;">
                                 <h5 class="text-white mb-1">SOC Urbano Integrado</h5>
-                                <p class="text-xs mb-2" style="color: #9d4edd;">Ciberseguridad y Orquestación</p>
+                                <p class="text-xs mb-2" style="color: #9d4edd;">Ciberseguridad y OrquestaciÃ³n</p>
                                 
                                 <div class="mt-3">
                                     <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                        <span class="text-muted">Nodos Cifrados en Línea</span> 
+                                        <span class="text-muted">Nodos Cifrados en LÃ­nea</span> 
                                         <span style="color: #9d4edd; font-weight: bold;">12,450 Activos</span>
                                     </div>
                                     <div class="bar-container mb-3" style="height: 6px;"><div class="bar-fill" style="width: 99.6%; background: #9d4edd; box-shadow: 0 0 10px rgba(157,78,221,0.5);"></div></div>
                                     
                                     <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                        <span class="text-muted">Protección de Intrusiones (IPS)</span> 
+                                        <span class="text-muted">ProtecciÃ³n de Intrusiones (IPS)</span> 
                                         <span class="text-blue font-weight-bold">Activo</span>
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
             <div class="text-center mt-5 pt-5 border-top-dark animate-fade-in delay-3" style="border-top: 1px solid rgba(255,255,255,0.05);">
                 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
                     <a href="{% url 'contacto' %}" class="btn-cyber btn-hero" style="padding: 15px 40px; font-size: 1.1rem; border-radius: 6px; background: linear-gradient(135deg, rgba(0,100,255,0.8) 0%, rgba(0,180,255,0.9) 100%); border: 1px solid rgba(0,180,255,1); box-shadow: 0 0 20px rgba(0,180,255,0.3); font-weight: 600;">
-                        Solicitar Auditoría de Red <i class="fa-solid fa-satellite-dish ml-2"></i>
+                        Solicitar AuditorÃ­a de Red <i class="fa-solid fa-satellite-dish ml-2"></i>
                     </a>
                     <a href="{% url 'servicios' %}" class="btn-cyber" style="padding: 15px 30px; font-size: 1.1rem; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
                         <i class="fa-solid fa-arrow-left mr-2"></i> Explorar Otros Servicios

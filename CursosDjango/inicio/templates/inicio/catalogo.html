@@ -1,21 +1,21 @@
-{% extends 'inicio/base.html' %}
+﻿{% extends 'inicio/base.html' %}
 
-{% block titulo %}Smart City XR | Catálogo — Morelia Digital{% endblock %}
+{% block titulo %}Smart City XR | CatÃ¡logo â€” Morelia Digital{% endblock %}
 
 {% block contenido %}
 <div style="padding-top: 100px; min-height: 80vh;">
 
-    <!-- HERO CATÁLOGO -->
+    <!-- HERO CATÃLOGO -->
     <div style="border-bottom: 2px solid var(--accent-neon); padding: 55px 0 45px; position:relative; overflow:hidden;">
         <div style="position:absolute; inset:0; background: radial-gradient(circle at 20% 50%, rgba(50,205,50,0.06), transparent 50%), radial-gradient(circle at 85% 30%, rgba(0,180,255,0.05), transparent 50%); pointer-events:none;"></div>
         <div class="container text-center" style="z-index:2; position:relative;">
-            <span class="badge mb-3" style="background:rgba(50,205,50,0.1); border:1px solid var(--accent-neon); color:var(--accent-neon); font-size:0.8rem; letter-spacing:2px; display:inline-block;">MORELIA, MICHOACÁN · GEMELO DIGITAL ACTIVO</span>
-            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">Catálogo de Proyectos <span class="text-neon">Urbanos XR</span></h1>
+            <span class="badge mb-3" style="background:rgba(50,205,50,0.1); border:1px solid var(--accent-neon); color:var(--accent-neon); font-size:0.8rem; letter-spacing:2px; display:inline-block;">MORELIA, MICHOACÃN Â· GEMELO DIGITAL ACTIVO</span>
+            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">CatÃ¡logo de Proyectos <span class="text-neon">Urbanos XR</span></h1>
             <p class="text-muted mx-auto mb-5" style="max-width:640px; font-size:1.05rem; line-height:1.7;">
-                Modelos y métricas en tiempo real del Gemelo Digital de Morelia, Michoacán. Infraestructura monitoreada, sustentabilidad medida y datos abiertos para la ciudadanía.
+                Modelos y mÃ©tricas en tiempo real del Gemelo Digital de Morelia, MichoacÃ¡n. Infraestructura monitoreada, sustentabilidad medida y datos abiertos para la ciudadanÃ­a.
             </p>
             <a href="{% url 'reportes:lista_problemas' %}" class="btn-cyber" style="background:linear-gradient(135deg, rgba(50,205,50,0.8), rgba(0,200,80,0.8)); border-color:rgba(50,205,50,0.5); padding:13px 32px; box-shadow:0 0 20px rgba(50,205,50,0.3);">
-                <i class="fa-solid fa-check-to-slot mr-1"></i> Votación Ciudadana de Prioridad
+                <i class="fa-solid fa-check-to-slot mr-1"></i> VotaciÃ³n Ciudadana de Prioridad
             </a>
         </div>
     </div>
@@ -27,7 +27,7 @@
                 <div class="glass-panel text-center" style="flex:1; min-width:160px; border-color:rgba(50,205,50,0.3);">
                     <i class="fa-solid fa-city text-neon mb-2" style="font-size:1.8rem;"></i>
                     <p class="text-white font-bold" style="font-size:1.7rem; margin:4px 0;">784,776</p>
-                    <p class="text-muted text-xs">Habitantes · Censo 2020</p>
+                    <p class="text-muted text-xs">Habitantes Â· Censo 2020</p>
                 </div>
                 <div class="glass-panel text-center" style="flex:1; min-width:160px; border-color:rgba(0,180,255,0.3);">
                     <i class="fa-solid fa-microchip text-blue mb-2" style="font-size:1.8rem;"></i>
@@ -36,8 +36,8 @@
                 </div>
                 <div class="glass-panel text-center" style="flex:1; min-width:160px; border-color:rgba(50,205,50,0.3);">
                     <i class="fa-solid fa-map text-neon mb-2" style="font-size:1.8rem;"></i>
-                    <p class="text-white font-bold" style="font-size:1.7rem; margin:4px 0;">1,199 km²</p>
-                    <p class="text-muted text-xs">Área Municipal Total</p>
+                    <p class="text-white font-bold" style="font-size:1.7rem; margin:4px 0;">1,199 kmÂ²</p>
+                    <p class="text-muted text-xs">Ãrea Municipal Total</p>
                 </div>
                 <div class="glass-panel text-center" style="flex:1; min-width:160px; border-color:rgba(0,180,255,0.3);">
                     <i class="fa-solid fa-satellite-dish text-blue mb-2" style="font-size:1.8rem;"></i>
@@ -60,14 +60,14 @@
 
                 <!-- COLUMNA IZQUIERDA: Visualizador 3D -->
                 <div class="animate-fade-in delay-1">
-                    <h4 class="text-white mb-3"><i class="fa-solid fa-cube text-neon"></i> Visualizador 3D — Bosque Cuauhtémoc</h4>
+                    <h4 class="text-white mb-3"><i class="fa-solid fa-cube text-neon"></i> Visualizador 3D â€” Bosque CuauhtÃ©moc</h4>
                     <div class="glass-panel p-0 overflow-hidden mb-4">
                         <div class="canvas-3d-container" id="canvas-3d" style="position:relative; overflow:hidden; border-radius:10px; background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.25) 0%, rgba(6, 11, 25, 0.8) 100%), linear-gradient(rgba(0, 180, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 180, 255, 0.1) 1px, transparent 1px); background-size: 100% 100%, 30px 30px, 30px 30px;">
                             <!-- Import Google's Model Viewer Web Component -->
                             <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
                             
                             <model-viewer 
-                                src="/media/modelos_3d/bosque_simple.glb" 
+                                src="https://raw.githubusercontent.com/HortyEmpress167/SMART-CITY-XR/master/CursosDjango/media/modelos_3d/bosque_simple.glb" 
                                 auto-rotate 
                                 rotation-per-second="30deg"
                                 camera-controls 
@@ -78,26 +78,26 @@
                             
                             <!-- Etiqueta Descriptiva -->
                             <div style="position:absolute; bottom:20px; left:20px; background:var(--bg-glass); backdrop-filter:blur(5px); padding:10px 15px; border-radius:8px; border-left:3px solid var(--accent-neon); pointer-events:none; z-index:10;">
-                                <h5 class="text-white m-0 text-sm"><i class="fa-solid fa-arrows-spin text-neon"></i> Modelo 3D Interactivo · Bosque Cuauhtémoc</h5>
-                                <p class="text-muted m-0" style="font-size:0.75rem;">Arrastra para rotar y visualizar desde cualquier ángulo</p>
+                                <h5 class="text-white m-0 text-sm"><i class="fa-solid fa-arrows-spin text-neon"></i> Modelo 3D Interactivo Â· Bosque CuauhtÃ©moc</h5>
+                                <p class="text-muted m-0" style="font-size:0.75rem;">Arrastra para rotar y visualizar desde cualquier Ã¡ngulo</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- INFO BLOQUE DEL PARQUE -->
                     <div class="glass-panel p-4" style="border-left:3px solid var(--accent-neon);">
-                        <h5 class="text-white font-bold mb-2"><i class="fa-solid fa-tree text-neon mr-1"></i> Bosque Cuauhtémoc — Datos Actuales</h5>
+                        <h5 class="text-white font-bold mb-2"><i class="fa-solid fa-tree text-neon mr-1"></i> Bosque CuauhtÃ©moc â€” Datos Actuales</h5>
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;">
                             <div>
                                 <p class="text-muted text-xs mb-1">Temperatura Ambiente</p>
-                                <p class="text-white font-bold">18.4°C <span class="text-neon text-xs">✔ Normal</span></p>
+                                <p class="text-white font-bold">18.4Â°C <span class="text-neon text-xs">âœ” Normal</span></p>
                             </div>
                             <div>
                                 <p class="text-muted text-xs mb-1">Humedad Relativa</p>
-                                <p class="text-white font-bold">63% <span class="text-blue text-xs">↑ Óptima</span></p>
+                                <p class="text-white font-bold">63% <span class="text-blue text-xs">â†‘ Ã“ptima</span></p>
                             </div>
                             <div>
-                                <p class="text-muted text-xs mb-1">Índice de Calidad Aire (ICA)</p>
+                                <p class="text-muted text-xs mb-1">Ãndice de Calidad Aire (ICA)</p>
                                 <p class="text-white font-bold">42 <span class="text-neon text-xs">Bueno</span></p>
                             </div>
                             <div>
@@ -108,87 +108,87 @@
                     </div>
                 </div>
 
-                <!-- COLUMNA DERECHA: Métricas y Dashboard -->
+                <!-- COLUMNA DERECHA: MÃ©tricas y Dashboard -->
                 <div class="animate-fade-in delay-2">
 
-                    <!-- PANEL OPTIMIZACIÓN DE RECURSOS -->
+                    <!-- PANEL OPTIMIZACIÃ“N DE RECURSOS -->
                     <div class="glass-panel mb-4 text-left" style="transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <h4 class="text-white mb-1"><i class="fa-solid fa-leaf text-neon"></i> Optimización de Recursos</h4>
-                        <p class="text-xs text-muted mb-4">Morelia Zona Metropolitana · Datos proyectados mensuales (2026)</p>
+                        <h4 class="text-white mb-1"><i class="fa-solid fa-leaf text-neon"></i> OptimizaciÃ³n de Recursos</h4>
+                        <p class="text-xs text-muted mb-4">Morelia Zona Metropolitana Â· Datos proyectados mensuales (2026)</p>
 
                         <div class="mt-2">
                             <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                <span><i class="fa-solid fa-bolt text-blue"></i> Energía Fotovoltaica (CFE + Paneles)</span>
+                                <span><i class="fa-solid fa-bolt text-blue"></i> EnergÃ­a Fotovoltaica (CFE + Paneles)</span>
                                 <span class="text-neon font-bold">82% Eficiencia</span>
                             </div>
                             <div class="bar-container"><div class="bar-fill" style="width:82%;"></div></div>
-                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">34.6 MW generados · 12,400 hogares cubiertos en Morelia Norte</p>
+                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">34.6 MW generados Â· 12,400 hogares cubiertos en Morelia Norte</p>
 
                             <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                <span><i class="fa-solid fa-droplet text-blue"></i> Reutilización de Agua (SAPAM)</span>
+                                <span><i class="fa-solid fa-droplet text-blue"></i> ReutilizaciÃ³n de Agua (SAPAM)</span>
                                 <span class="text-neon font-bold">68% Reciclada</span>
                             </div>
                             <div class="bar-container"><div class="bar-fill" style="width:68%;"></div></div>
-                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">Sistema de aguas grises Río Chiquito · 1.2M litros/día recuperados</p>
+                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">Sistema de aguas grises RÃ­o Chiquito Â· 1.2M litros/dÃ­a recuperados</p>
 
                             <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                <span><i class="fa-solid fa-wind text-blue"></i> Calidad del Aire — PM2.5 (Estación Centro)</span>
-                                <span class="text-neon font-bold">ICA 42 · Bueno</span>
+                                <span><i class="fa-solid fa-wind text-blue"></i> Calidad del Aire â€” PM2.5 (EstaciÃ³n Centro)</span>
+                                <span class="text-neon font-bold">ICA 42 Â· Bueno</span>
                             </div>
                             <div class="bar-container"><div class="bar-fill" style="width:88%;"></div></div>
-                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">Estación SEMARNAT · Av. Acueducto, Morelia · Última medición: 07:30h</p>
+                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px; margin-bottom:12px;">EstaciÃ³n SEMARNAT Â· Av. Acueducto, Morelia Â· Ãšltima mediciÃ³n: 07:30h</p>
 
                             <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                <span><i class="fa-solid fa-recycle text-blue"></i> Gestión de Residuos Sólidos</span>
+                                <span><i class="fa-solid fa-recycle text-blue"></i> GestiÃ³n de Residuos SÃ³lidos</span>
                                 <span class="font-bold" style="color:#f59e0b;">54% Separados</span>
                             </div>
                             <div class="bar-container"><div class="bar-fill" style="width:54%; background:linear-gradient(90deg, #f59e0b, #fb923c);"></div></div>
-                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px;">847 ton/semana · Meta 2026: 70% separación en origen (PNUMA)</p>
+                            <p class="text-muted" style="font-size:0.72rem; margin-top:3px;">847 ton/semana Â· Meta 2026: 70% separaciÃ³n en origen (PNUMA)</p>
                         </div>
                     </div>
 
                     <!-- DASHBOARD ADMINISTRATIVO -->
                     <div class="glass-panel text-left" style="transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                         <h4 class="text-white mb-1"><i class="fa-solid fa-chart-line text-blue"></i> Dashboard Administrativo XR</h4>
-                        <p class="text-xs text-muted mb-4">Zonas de Morelia — Índice de Riesgo Urbano (IRU) · Actualización: Hoy 06:00h</p>
+                        <p class="text-xs text-muted mb-4">Zonas de Morelia â€” Ãndice de Riesgo Urbano (IRU) Â· ActualizaciÃ³n: Hoy 06:00h</p>
 
                         <div style="display:flex; flex-direction:column; gap:10px;">
                             <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(255,50,50,0.07); border-radius:8px; border-left:3px solid #ef4444;">
                                 <div>
-                                    <p class="text-white text-sm font-bold mb-0">Zona Norte — Col. Felipe Carrillo Puerto</p>
-                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Infraestructura vial deteriorada · 3 reportes activos · 48h sin resolución</p>
+                                    <p class="text-white text-sm font-bold mb-0">Zona Norte â€” Col. Felipe Carrillo Puerto</p>
+                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Infraestructura vial deteriorada Â· 3 reportes activos Â· 48h sin resoluciÃ³n</p>
                                 </div>
-                                <span class="badge" style="background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#ef4444; white-space:nowrap; margin-left:10px;">⚠ Alto Riesgo</span>
+                                <span class="badge" style="background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#ef4444; white-space:nowrap; margin-left:10px;">âš  Alto Riesgo</span>
                             </div>
 
                             <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(245,158,11,0.07); border-radius:8px; border-left:3px solid #f59e0b;">
                                 <div>
-                                    <p class="text-white text-sm font-bold mb-0">Centro Histórico — Zona Patrimonio UNESCO</p>
-                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Iluminación patrimonial deficiente · Intervención programada para Q2</p>
+                                    <p class="text-white text-sm font-bold mb-0">Centro HistÃ³rico â€” Zona Patrimonio UNESCO</p>
+                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">IluminaciÃ³n patrimonial deficiente Â· IntervenciÃ³n programada para Q2</p>
                                 </div>
                                 <span class="badge" style="background:rgba(245,158,11,0.2); border:1px solid #f59e0b; color:#f59e0b; white-space:nowrap; margin-left:10px;">Moderado</span>
                             </div>
 
                             <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(50,205,50,0.07); border-radius:8px; border-left:3px solid var(--accent-neon);">
                                 <div>
-                                    <p class="text-white text-sm font-bold mb-0">Periférico Sur — Col. Nueva Chapultepec</p>
-                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Sensores activos · Sin alertas críticas · 1 reporte resuelto esta semana</p>
+                                    <p class="text-white text-sm font-bold mb-0">PerifÃ©rico Sur â€” Col. Nueva Chapultepec</p>
+                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Sensores activos Â· Sin alertas crÃ­ticas Â· 1 reporte resuelto esta semana</p>
                                 </div>
-                                <span class="badge" style="background:rgba(50,205,50,0.15); border:1px solid var(--accent-neon); color:var(--accent-neon); white-space:nowrap; margin-left:10px;">✓ Estable</span>
+                                <span class="badge" style="background:rgba(50,205,50,0.15); border:1px solid var(--accent-neon); color:var(--accent-neon); white-space:nowrap; margin-left:10px;">âœ“ Estable</span>
                             </div>
 
                             <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(0,180,255,0.07); border-radius:8px; border-left:3px solid var(--accent-blue);">
                                 <div>
-                                    <p class="text-white text-sm font-bold mb-0">Bosque Cuauhtémoc — Parque Central</p>
-                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Gemelo Digital completado · 14 sensores · ICA 42 (Bueno)</p>
+                                    <p class="text-white text-sm font-bold mb-0">Bosque CuauhtÃ©moc â€” Parque Central</p>
+                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Gemelo Digital completado Â· 14 sensores Â· ICA 42 (Bueno)</p>
                                 </div>
                                 <span class="badge" style="background:rgba(0,180,255,0.15); border:1px solid var(--accent-blue); color:var(--accent-blue); white-space:nowrap; margin-left:10px;">En Monitoreo</span>
                             </div>
 
                             <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(157,78,221,0.07); border-radius:8px; border-left:3px solid #9d4edd;">
                                 <div>
-                                    <p class="text-white text-sm font-bold mb-0">Acueducto — Col. Chapultepec Norte</p>
-                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Patrimonio histórico escaneado · Modelo 3D 96% completado</p>
+                                    <p class="text-white text-sm font-bold mb-0">Acueducto â€” Col. Chapultepec Norte</p>
+                                    <p class="text-muted" style="font-size:0.72rem; margin:0;">Patrimonio histÃ³rico escaneado Â· Modelo 3D 96% completado</p>
                                 </div>
                                 <span class="badge" style="background:rgba(157,78,221,0.15); border:1px solid #9d4edd; color:#9d4edd; white-space:nowrap; margin-left:10px;">Escaneo LiDAR</span>
                             </div>
@@ -197,7 +197,7 @@
                         <div class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.05);">
                             <p class="text-muted text-xs">
                                 <i class="fa-solid fa-circle text-neon mr-1" style="font-size:0.5rem;"></i>
-                                Sistema conectado · Gobierno Municipal de Morelia · IMPLAN Michoacán · SEMARNAT
+                                Sistema conectado Â· Gobierno Municipal de Morelia Â· IMPLAN MichoacÃ¡n Â· SEMARNAT
                             </p>
                         </div>
                     </div>
@@ -207,11 +207,11 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PROYECTOS ADICIONALES -->
+    <!-- SECCIÃ“N PROYECTOS ADICIONALES -->
     <section class="pb-5" style="border-top:1px solid rgba(255,255,255,0.05); padding-top:3rem;">
         <div class="container">
             <h3 class="text-white font-bold text-center mb-2">Iniciativas Activas <span class="text-neon">en Morelia</span></h3>
-            <p class="text-muted text-center mb-5">Proyectos de Ciudad Inteligente coordinados con el Ayuntamiento Municipal 2024–2027</p>
+            <p class="text-muted text-center mb-5">Proyectos de Ciudad Inteligente coordinados con el Ayuntamiento Municipal 2024â€“2027</p>
 
             <div class="catalog-grid-6">
                 <a href="{% url 'proyecto_movilidad' %}" style="text-decoration: none; display: block; color: inherit;">
@@ -220,8 +220,8 @@
                         <div class="p-3">
                             <span class="badge badge-outline-blue mb-2">Movilidad</span>
                             <h5 class="text-white font-bold text-sm mb-1">Corredor Digital Camelinas</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Av. Camelinas instrumentada con 86 sensores de flujo vehicular y 12 semáforos IA. Reducción del 18% en tiempos de traslado desde enero 2026.</p>
-                            <p class="text-neon text-xs mt-2 font-bold">↑ 18% eficiencia vial</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Av. Camelinas instrumentada con 86 sensores de flujo vehicular y 12 semÃ¡foros IA. ReducciÃ³n del 18% en tiempos de traslado desde enero 2026.</p>
+                            <p class="text-neon text-xs mt-2 font-bold">â†‘ 18% eficiencia vial</p>
                         </div>
                     </div>
                 </a>
@@ -232,7 +232,7 @@
                         <div class="p-3">
                             <span class="badge badge-outline-green mb-2">Sustentabilidad</span>
                             <h5 class="text-white font-bold text-sm mb-1">Red de Parques Inteligentes</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">47 parques de Morelia con sensores ambientales activos: Bosque Cuauhtémoc, Parque Juárez, Parque Lineal Las Rosas y Parque Alameda.</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">47 parques de Morelia con sensores ambientales activos: Bosque CuauhtÃ©moc, Parque JuÃ¡rez, Parque Lineal Las Rosas y Parque Alameda.</p>
                             <p class="text-neon text-xs mt-2 font-bold">47 parques monitoreados</p>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                         <div class="p-3">
                             <span class="badge badge-outline-blue mb-2">IoT / 5G</span>
                             <h5 class="text-white font-bold text-sm mb-1">Red LoRaWAN Morelia</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">1,240 nodos IoT instalados en los 17 municipios prioritarios del área metropolitana. Cobertura 5G en Centro y Periférico Norte disponible desde 2025.</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">1,240 nodos IoT instalados en los 17 municipios prioritarios del Ã¡rea metropolitana. Cobertura 5G en Centro y PerifÃ©rico Norte disponible desde 2025.</p>
                             <p class="text-neon text-xs mt-2 font-bold">1,240 nodos activos</p>
                         </div>
                     </div>
@@ -256,8 +256,8 @@
                         <div class="p-3">
                             <span class="badge mb-2" style="background:rgba(157,78,221,0.1); border:1px solid #9d4edd; color:#9d4edd;">LiDAR 3D</span>
                             <h5 class="text-white font-bold text-sm mb-1">Escaneo Patrimonial UNESCO</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Gemelo Digital del Centro Histórico de Morelia (Patrimonio de la Humanidad): 4.2 km² escaneados con precisión submilimétrica para restauración preventiva.</p>
-                            <p class="text-neon text-xs mt-2 font-bold">4.2 km² escaneados</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Gemelo Digital del Centro HistÃ³rico de Morelia (Patrimonio de la Humanidad): 4.2 kmÂ² escaneados con precisiÃ³n submilimÃ©trica para restauraciÃ³n preventiva.</p>
+                            <p class="text-neon text-xs mt-2 font-bold">4.2 kmÂ² escaneados</p>
                         </div>
                     </div>
                 </a>
@@ -268,7 +268,7 @@
                         <div class="p-3">
                             <span class="badge mb-2" style="background:rgba(245,158,11,0.1); border:1px solid #f59e0b; color:#f59e0b;">Saneamiento</span>
                             <h5 class="text-white font-bold text-sm mb-1">Sistema SAPAM Inteligente</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Modernización de la red hidráulica del SAPAM con sensores de presión y calidad, cubriendo las 32 colonias de mayor consumo en Morelia Este.</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">ModernizaciÃ³n de la red hidrÃ¡ulica del SAPAM con sensores de presiÃ³n y calidad, cubriendo las 32 colonias de mayor consumo en Morelia Este.</p>
                             <p class="text-neon text-xs mt-2 font-bold">68% agua reciclada</p>
                         </div>
                     </div>
@@ -280,8 +280,8 @@
                         <div class="p-3">
                             <span class="badge mb-2" style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; color:#ef4444;">Ciberseguridad</span>
                             <h5 class="text-white font-bold text-sm mb-1">SOC Municipal Morelia</h5>
-                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Centro de Operaciones de Seguridad para protección de infraestructura crítica municipal: red de cámaras C5 (842 unidades) y sistemas SCADA del Palacio de Gobierno.</p>
-                            <p class="text-neon text-xs mt-2 font-bold">842 cámaras enlazadas</p>
+                            <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Centro de Operaciones de Seguridad para protecciÃ³n de infraestructura crÃ­tica municipal: red de cÃ¡maras C5 (842 unidades) y sistemas SCADA del Palacio de Gobierno.</p>
+                            <p class="text-neon text-xs mt-2 font-bold">842 cÃ¡maras enlazadas</p>
                         </div>
                     </div>
                 </a>

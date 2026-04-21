@@ -1,4 +1,4 @@
-{% load static %}
+﻿{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,7 +14,7 @@
 
 <body>
     {% if request.path != '/' %}
-    <!-- Botón Global de Retroceso -->
+    <!-- BotÃ³n Global de Retroceso -->
     <button onclick="window.history.back()" class="btn-floating-back" title="Regresar">
         <i class="fa-solid fa-arrow-left"></i>
     </button>
@@ -101,7 +101,7 @@
             border: 1px solid {% if message.message == 'reporte_enviado' %}rgba(50,205,50,0.4){% elif message.message == 'voto_registrado' %}rgba(0,180,255,0.4){% elif message.message == 'cotizacion_enviada' %}rgba(138, 43, 226, 0.4){% else %}rgba(255,255,255,0.2){% endif %};
             border-left: 4px solid {% if message.message == 'reporte_enviado' %}var(--accent-neon){% elif message.message == 'voto_registrado' %}var(--accent-blue){% elif message.message == 'cotizacion_enviada' %}#8a2be2{% else %}var(--accent-neon){% endif %};
         ">
-            <!-- Ícono -->
+            <!-- Ãcono -->
             <div style="flex-shrink:0; font-size:1.6rem; {% if message.message == 'reporte_enviado' %}color:var(--accent-neon); filter:drop-shadow(0 0 8px rgba(50,205,50,0.8));{% elif message.message == 'voto_registrado' %}color:var(--accent-blue); filter:drop-shadow(0 0 8px rgba(0,180,255,0.8));{% elif message.message == 'cotizacion_enviada' %}color:#ff00ff; filter:drop-shadow(0 0 8px rgba(138, 43, 226, 0.8));{% else %}color:var(--accent-neon);{% endif %}">
                 {% if message.message == 'reporte_enviado' %}
                     <i class="fa-solid fa-satellite-dish"></i>
@@ -117,15 +117,15 @@
             <div style="flex:1;">
                 {% if message.message == 'reporte_enviado' %}
                     <p class="font-bold text-white mb-1" style="font-size:0.95rem; letter-spacing:0.5px;">Reporte transmitido al sistema</p>
-                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Tu incidente ha sido registrado. El sistema XR lo analizará en las próximas 24h y notificará al equipo de intervención.</p>
+                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Tu incidente ha sido registrado. El sistema XR lo analizarÃ¡ en las prÃ³ximas 24h y notificarÃ¡ al equipo de intervenciÃ³n.</p>
                 {% elif message.message == 'voto_registrado' %}
                     <p class="font-bold text-white mb-1" style="font-size:0.95rem; letter-spacing:0.5px;">Voto registrado</p>
-                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Tu voto ha sido contabilizado. Los reportes con +10 votos se escalan automáticamente al Centro de Operaciones.</p>
+                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Tu voto ha sido contabilizado. Los reportes con +10 votos se escalan automÃ¡ticamente al Centro de Operaciones.</p>
                 {% elif message.message == 'cotizacion_enviada' %}
                     <p class="font-bold text-white mb-1" style="font-size:0.95rem; letter-spacing:0.5px;">Solicitud enviada correctamente</p>
-                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Hemos recibido tu solicitud de cotización. Un analista revisará los detalles y te contactará en un plazo de 48 horas.</p>
+                    <p class="text-muted" style="font-size:0.8rem; line-height:1.5;">Hemos recibido tu solicitud de cotizaciÃ³n. Un analista revisarÃ¡ los detalles y te contactarÃ¡ en un plazo de 48 horas.</p>
                 {% else %}
-                    <p class="font-bold text-white mb-1" style="font-size:0.95rem;">Operación completada</p>
+                    <p class="font-bold text-white mb-1" style="font-size:0.95rem;">OperaciÃ³n completada</p>
                     <p class="text-muted" style="font-size:0.8rem;">{{ message }}</p>
                 {% endif %}
             </div>
@@ -145,7 +145,7 @@
     </style>
 
     <script>
-        // Auto-cerrar toasts después de 6 segundos
+        // Auto-cerrar toasts despuÃ©s de 6 segundos
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('[data-toast]').forEach(toast => {
                 setTimeout(() => {

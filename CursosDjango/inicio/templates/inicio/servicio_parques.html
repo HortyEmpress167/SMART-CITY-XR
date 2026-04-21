@@ -1,4 +1,4 @@
-{% extends 'inicio/base.html' %}
+﻿{% extends 'inicio/base.html' %}
 
 {% block titulo %}Smart City XR | Parques Inteligentes{% endblock %}
 
@@ -20,25 +20,25 @@
                 <span class="badge badge-green mb-3" style="font-size: 0.9rem; padding: 6px 12px;"><i class="fa-solid fa-leaf mr-1"></i> Sustentabilidad Urbana</span>
                 <h1 class="mb-3 font-bold" style="font-size: 3.5rem;">Parques <span class="text-neon" style="text-shadow: 0 0 20px rgba(50,205,50,0.5);">Inteligentes</span></h1>
                 <p class="text-muted mx-auto" style="max-width: 750px; font-size: 1.15rem; line-height: 1.6;">
-                    Diseñamos ecosistemas autosustentables de próxima generación. Evaluamos la gestión de captación de agua pluvial y empleamos redes neuronales para el cuidado automatizado de áreas verdes operadas en tiempo real.
+                    DiseÃ±amos ecosistemas autosustentables de prÃ³xima generaciÃ³n. Evaluamos la gestiÃ³n de captaciÃ³n de agua pluvial y empleamos redes neuronales para el cuidado automatizado de Ã¡reas verdes operadas en tiempo real.
                 </p>
             </div>
             
             <!-- GRID DE INFORMACION DETALLADA -->
             <div class="dashboard-grid mt-5 mb-5 align-items-start">
                 
-                <!-- COLUMNA IZQUIERDA: Panel Central y Métricas -->
+                <!-- COLUMNA IZQUIERDA: Panel Central y MÃ©tricas -->
                 <div class="animate-fade-in delay-1">
                     <!-- Vista de Proyecto con Visor Web GLB (Model Viewer 3D) -->
                     <div class="glass-panel p-0 mb-4" id="eco-3d-card" style="border: 1px solid rgba(50,205,50,0.2); box-shadow: 0 10px 30px rgba(50,205,50,0.1); overflow: hidden; position: relative;">
                         <!-- Import Google's Model Viewer Web Component -->
                         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
                         
-                        <!-- Contenedor con el fondo azul tech cibernético -->
+                        <!-- Contenedor con el fondo azul tech cibernÃ©tico -->
                         <div style="position:relative; width:100%; height:380px; border-radius:10px; background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.25) 0%, rgba(6, 11, 25, 0.8) 100%), linear-gradient(rgba(0, 180, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 180, 255, 0.1) 1px, transparent 1px); background-size: 100% 100%, 30px 30px, 30px 30px;">
                             
                             <model-viewer 
-                                src="/media/modelos_3d/bosque_agua.glb" 
+                                src="https://raw.githubusercontent.com/HortyEmpress167/SMART-CITY-XR/master/CursosDjango/media/modelos_3d/bosque_agua.glb" 
                                 auto-rotate 
                                 rotation-per-second="30deg"
                                 camera-controls 
@@ -55,22 +55,22 @@
                             <!-- Etiqueta Flotante Inferior -->
                             <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; pointer-events: none;">
                                 <h4 class="text-white mb-2" style="text-shadow: 0 4px 15px rgba(0,0,0,1);"><i class="fa-brands fa-envira text-neon mr-2"></i> Ecosistema Digitalizado</h4>
-                                <p class="text-sm text-gray-200 m-0" style="text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 500;">Gemelo digital para captación pluvial. (Arrastra el modelo para rotar)</p>
+                                <p class="text-sm text-gray-200 m-0" style="text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 500;">Gemelo digital para captaciÃ³n pluvial. (Arrastra el modelo para rotar)</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Minipaneles de Métricas (Flex Row) -->
+                    <!-- Minipaneles de MÃ©tricas (Flex Row) -->
                     <div style="display: flex; gap: 15px;">
                         <div class="glass-panel text-center flex-fill" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                             <i class="fa-solid fa-droplet text-blue mb-2" style="font-size: 2rem;"></i>
                             <h3 class="font-bold text-white m-0" style="font-size: 2rem;">45%</h3>
-                            <p class="text-xs text-muted m-0 text-uppercase tracking-wider">Ahorro Hídrico</p>
+                            <p class="text-xs text-muted m-0 text-uppercase tracking-wider">Ahorro HÃ­drico</p>
                         </div>
                         <div class="glass-panel text-center flex-fill" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                             <i class="fa-solid fa-seedling text-neon mb-2" style="font-size: 2rem; filter: drop-shadow(0 0 8px rgba(50,205,50,0.4));"></i>
                             <h3 class="font-bold text-white m-0" style="font-size: 2rem;">+120t</h3>
-                            <p class="text-xs text-muted m-0 text-uppercase tracking-wider">Captura CO₂ / año</p>
+                            <p class="text-xs text-muted m-0 text-uppercase tracking-wider">Captura COâ‚‚ / aÃ±o</p>
                         </div>
                     </div>
                 </div>
@@ -86,25 +86,25 @@
                             </div>
                             <div>
                                 <h5 class="text-white mb-1">Riego Predictivo con IA</h5>
-                                <p class="text-xs text-neon mb-2">Integración Meteorológica Automatizada</p>
+                                <p class="text-xs text-neon mb-2">IntegraciÃ³n MeteorolÃ³gica Automatizada</p>
                                 <p class="text-sm text-muted m-0 line-height-15">
-                                    El sistema detecta la humedad del suelo subterráneo y cruza los datos con la API del clima local. Si se preve lluvia, retrasa el riego para ahorrar recursos valiosos.
+                                    El sistema detecta la humedad del suelo subterrÃ¡neo y cruza los datos con la API del clima local. Si se preve lluvia, retrasa el riego para ahorrar recursos valiosos.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: Iluminación -->
+                    <!-- Tarjeta 2: IluminaciÃ³n -->
                     <div class="glass-panel feature-card-hover" style="border-left: 3px solid var(--accent-blue);">
                         <div style="display: flex; align-items: flex-start; gap: 15px;">
                             <div style="background: rgba(0,180,255,0.1); padding: 15px; border-radius: 12px; min-width: 60px; text-align: center;">
                                 <i class="fa-regular fa-sun text-blue" style="font-size: 1.5rem;"></i>
                             </div>
                             <div>
-                                <h5 class="text-white mb-1">Iluminación LED Adaptativa</h5>
-                                <p class="text-xs text-blue mb-2">Red Energética Autónoma</p>
+                                <h5 class="text-white mb-1">IluminaciÃ³n LED Adaptativa</h5>
+                                <p class="text-xs text-blue mb-2">Red EnergÃ©tica AutÃ³noma</p>
                                 <p class="text-sm text-muted m-0 line-height-15">
-                                    Puntos de luz alimentados por paneles solares que disminuyen su intensidad de madrugada y aumentan al 100% únicamente si detectan tránsito de personas, reduciendo la contaminación lumínica.
+                                    Puntos de luz alimentados por paneles solares que disminuyen su intensidad de madrugada y aumentan al 100% Ãºnicamente si detectan trÃ¡nsito de personas, reduciendo la contaminaciÃ³n lumÃ­nica.
                                 </p>
                             </div>
                         </div>
@@ -118,18 +118,18 @@
                             </div>
                             <div style="flex-grow: 1;">
                                 <h5 class="text-white mb-1">Censo Ambiental en Tiempo Real</h5>
-                                <p class="text-xs mb-2" style="color: #ffba08;">Sensores PM2.5 y Acústica</p>
+                                <p class="text-xs mb-2" style="color: #ffba08;">Sensores PM2.5 y AcÃºstica</p>
                                 
                                 <div class="mt-3">
                                     <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                        <span class="text-muted">Concentración de Partículas</span> 
-                                        <span style="color: #ffba08; font-weight: bold;">12 µg/m³ (Bajo)</span>
+                                        <span class="text-muted">ConcentraciÃ³n de PartÃ­culas</span> 
+                                        <span style="color: #ffba08; font-weight: bold;">12 Âµg/mÂ³ (Bajo)</span>
                                     </div>
                                     <div class="bar-container mb-3" style="height: 6px;"><div class="bar-fill" style="width: 25%; background: #ffba08; box-shadow: 0 0 10px rgba(255,186,8,0.5);"></div></div>
                                     
                                     <div class="d-flex justify-content-between text-xs text-white mb-1">
-                                        <span class="text-muted">Desempeño de Fotosíntesis Zonal</span> 
-                                        <span class="text-neon font-weight-bold">Óptimo (94%)</span>
+                                        <span class="text-muted">DesempeÃ±o de FotosÃ­ntesis Zonal</span> 
+                                        <span class="text-neon font-weight-bold">Ã“ptimo (94%)</span>
                                     </div>
                                     <div class="bar-container" style="height: 6px;"><div class="bar-fill" style="width: 94%; background: var(--accent-neon); box-shadow: 0 0 10px rgba(50,205,50,0.5);"></div></div>
                                 </div>
