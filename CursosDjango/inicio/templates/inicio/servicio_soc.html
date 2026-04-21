@@ -1,0 +1,67 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Ciberseguridad (SOC){% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+    <!-- Hero 3D Model Viewer -->
+    <div class="relative w-full overflow-hidden mb-5" style="height: 420px; border-bottom: 2px solid #9d4edd; position: relative;">
+        <!-- Fondo cyberpunk con rejilla púrpura -->
+        <div style="position:absolute;inset:0;background: radial-gradient(circle at 50% 40%, rgba(157,78,221,0.2) 0%, rgba(6,11,25,0.95) 70%), linear-gradient(rgba(157,78,221,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(157,78,221,0.07) 1px, transparent 1px); background-size: 100% 100%, 35px 35px, 35px 35px;"></div>
+        
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <model-viewer 
+            src="/media/modelos_3d/bosque_meca.glb"
+            auto-rotate rotation-per-second="20deg"
+            camera-controls shadow-intensity="1" exposure="1.0"
+            style="position:absolute;inset:0;width:100%;height:100%;background-color:transparent;">
+        </model-viewer>
+
+        <!-- Overlay degradado y texto superpuesto -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(13,17,23,1) 0%, rgba(13,17,23,0.5) 50%, transparent 100%);pointer-events:none;"></div>
+        <div class="container relative h-100 d-flex flex-column justify-content-end pb-5" style="z-index:10;pointer-events:none;">
+            <span class="badge mb-2" style="width:fit-content;background:rgba(0,0,0,0.6);border:1px solid #9d4edd;color:#9d4edd;backdrop-filter:blur(4px);"><i class="fa-solid fa-shield-halved mr-2"></i>Módulo Adicional</span>
+            <h1 class="font-bold text-white mb-2" style="font-size:3rem;text-shadow:0 0 20px rgba(157,78,221,0.5);">Centro de Ciberseguridad (SOC)</h1>
+            <p style="font-size:1.2rem;color:#9d4edd;">Security Operations Center &amp; Red Team · (Arrastra para explorar)</p>
+        </div>
+    </div>
+
+    <section class="pb-5">
+        <div class="container animate-fade-in">
+            <div class="glass-panel p-5 mb-5" style="border-left: 4px solid #9d4edd;">
+                <h3 class="text-white mb-4">Defensa del Gemelo Digital</h3>
+                <p class="text-muted text-lg mb-4" style="line-height: 1.8;">
+                    Este módulo adicional expone las métricas vitales de seguridad integral sobre toda la plataforma IoT de la ciudad. Protegemos semáforos, telemetría y bases de datos ciudadanas ante ataques DDoS, intrusiones o alteraciones de sensores utilizando Inteligencia Artificial y un "Escudo Neumático" lógico.
+                </p>
+                <div class="row text-center mt-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-chart-line text-purple mb-3" style="font-size: 2rem; color: #9d4edd;"></i>
+                            <h4 class="text-white mb-1">Monitoreo 24/7</h4>
+                            <p class="text-xs text-muted">Centro de mando ininterrumpido.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-bug-slash text-purple mb-3" style="font-size: 2rem; color: #9d4edd;"></i>
+                            <h4 class="text-white mb-1">Zero-Day Defense</h4>
+                            <p class="text-xs text-muted">Contención algorítmica de malware.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-fingerprint text-purple mb-3" style="font-size: 2rem; color: #9d4edd;"></i>
+                            <h4 class="text-white mb-1">Auditoría Blockchain</h4>
+                            <p class="text-xs text-muted">Registros inmutables de acceso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="{% url 'servicios' %}" class="btn-cyber-outline" style="border-color: #9d4edd; color: #9d4edd;"><i class="fa-solid fa-arrow-left mr-2"></i> Volver al Hub Central</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Reportar Incidente Urbano{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 90vh;">
+
+    <!-- HERO HEADER -->
+    <div style="position: relative; overflow: hidden; border-bottom: 2px solid var(--accent-neon); padding: 60px 0 50px;">
+        <div style="position: absolute; inset:0; background: radial-gradient(circle at 30% 50%, rgba(50,205,50,0.08), transparent 60%), radial-gradient(circle at 80% 20%, rgba(0,180,255,0.06), transparent 50%); pointer-events:none;"></div>
+        <div class="container text-center relative" style="z-index:2;">
+            <div class="mb-3">
+                <span class="badge" style="background:rgba(50,205,50,0.1); border:1px solid var(--accent-neon); color:var(--accent-neon); font-size:0.8rem; letter-spacing:2px;">MÓDULO CIUDADANO</span>
+            </div>
+            <h1 class="text-white font-bold mb-3" style="font-size:3rem; letter-spacing:1px;">
+                Reportar <span class="text-neon" style="text-shadow: 0 0 20px rgba(50,205,50,0.5);">Incidente Urbano</span>
+            </h1>
+            <p class="text-muted mx-auto" style="font-size:1.1rem; max-width:600px; line-height:1.7;">
+                Documenta el problema con detalle para que la comunidad pueda votar por su pronta atención. Los reportes con más votos son escalados al equipo de intervención.
+            </p>
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <section class="pt-5 pb-5">
+        <div class="container animate-fade-in" style="max-width: 760px;">
+            <div class="glass-panel p-0" style="overflow:hidden; border: 1px solid rgba(50,205,50,0.25); box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+
+                <!-- Barra superior del panel -->
+                <div style="background: rgba(50,205,50,0.08); border-bottom: 1px solid rgba(50,205,50,0.2); padding: 18px 30px; display:flex; align-items:center; gap:12px;">
+                    <i class="fa-solid fa-tower-broadcast text-neon" style="font-size:1.3rem;"></i>
+                    <span class="text-white font-bold" style="letter-spacing:1px;">FORMULARIO DE REPORTE — SISTEMA XR</span>
+                    <div style="margin-left:auto; display:flex; gap:6px;">
+                        <span style="width:10px; height:10px; border-radius:50%; background:#ff5f57; display:inline-block;"></span>
+                        <span style="width:10px; height:10px; border-radius:50%; background:#ffbd2e; display:inline-block;"></span>
+                        <span style="width:10px; height:10px; border-radius:50%; background:var(--accent-neon); display:inline-block;"></span>
+                    </div>
+                </div>
+
+                <!-- Cuerpo del formulario -->
+                <div style="padding: 40px;">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Título -->
+                        <div class="form-group mb-4">
+                            <label style="color:var(--accent-neon); font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-exclamation-triangle mr-1"></i> {{ form.titulo.label }}
+                            </label>
+                            {{ form.titulo }}
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="form-group mb-4">
+                            <label style="color:var(--accent-neon); font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-file-alt mr-1"></i> {{ form.descripcion.label }}
+                            </label>
+                            {{ form.descripcion }}
+                        </div>
+
+                        <!-- Coordenadas (en fila) -->
+                        <div style="display:flex; gap:20px; flex-wrap:wrap;" class="mb-4">
+                            <div class="form-group" style="flex:1; min-width:200px;">
+                                <label style="color:var(--accent-blue); font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-location-crosshairs mr-1"></i> {{ form.latitud.label }}
+                                </label>
+                                {{ form.latitud }}
+                            </div>
+                            <div class="form-group" style="flex:1; min-width:200px;">
+                                <label style="color:var(--accent-blue); font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-map-pin mr-1"></i> {{ form.longitud.label }}
+                                </label>
+                                {{ form.longitud }}
+                            </div>
+                        </div>
+
+                        <!-- Foto evidencia -->
+                        <div class="form-group mb-5">
+                            <label style="color:var(--accent-blue); font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-camera mr-1"></i> {{ form.foto_evidencia.label }}
+                            </label>
+                            <div style="border:2px dashed rgba(0,180,255,0.3); border-radius:8px; padding:20px; text-align:center; color:var(--text-muted); transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(0,180,255,0.6)'" onmouseout="this.style.borderColor='rgba(0,180,255,0.3)'">
+                                {{ form.foto_evidencia }}
+                                <p class="text-muted text-xs mt-2">JPG, PNG o WEBP. Máx. 10MB.</p>
+                            </div>
+                        </div>
+
+                        <!-- Alerta info -->
+                        <div style="background:rgba(50,205,50,0.06); border:1px solid rgba(50,205,50,0.2); border-radius:8px; padding:15px 20px; margin-bottom:30px; display:flex; gap:12px; align-items:flex-start;">
+                            <i class="fa-solid fa-circle-info text-neon mt-1"></i>
+                            <p class="text-muted text-xs" style="line-height:1.6; margin:0;">El reporte será revisado por el sistema automático XR en menos de <strong class="text-white">24 horas</strong>. Los reportes con más de 10 votos escalan automáticamente al Centro de Operaciones para intervención prioritaria.</p>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between align-items-center pt-3" style="border-top:1px solid rgba(255,255,255,0.07);">
+                            <a href="{% url 'reportes:lista_problemas' %}" class="btn-cyber-outline" style="border-color:rgba(255,255,255,0.2); color:var(--text-muted);">
+                                <i class="fa-solid fa-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn-cyber" style="background:linear-gradient(135deg, rgba(50,205,50,0.8), rgba(0,200,80,0.8)); border-color:rgba(50,205,50,0.5); padding:12px 35px; font-size:1rem; box-shadow:0 0 20px rgba(50,205,50,0.3);">
+                                <i class="fa-solid fa-satellite-dish mr-1"></i> Enviar Reporte al Sistema
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

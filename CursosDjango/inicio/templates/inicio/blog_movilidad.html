@@ -1,0 +1,65 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Avances en Movilidad Autónoma{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+
+    <!-- BANNER ARTÍCULO -->
+    <div style="position: relative; height: 380px; overflow: hidden; border-bottom: 2px solid var(--accent-neon);">
+        <!-- Fondo oscuro sin imagen -->
+        <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(6,11,25,1) 0%, transparent 60%);"></div>
+        <div class="container" style="position:absolute; bottom:40px; left:50%; transform:translateX(-50%); width:95%;">
+            <span class="badge" style="background:rgba(0,0,0,0.6); border:1px solid var(--accent-neon); color:var(--accent-neon); margin-bottom:12px; display:inline-block;">Movilidad</span>
+            <h1 class="text-white font-bold" style="font-size: 2.8rem; line-height:1.2; max-width:750px;">Avances en Movilidad Autónoma</h1>
+            <p class="text-muted mt-2"><i class="far fa-calendar-alt mr-1"></i> Hace 2 días &nbsp;·&nbsp; 6 min de lectura</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <section class="pb-5 pt-5">
+        <div class="container animate-fade-in" style="max-width: 820px;">
+
+            <div class="glass-panel p-5 mb-4" style="border-left: 4px solid var(--accent-neon);">
+                <p class="text-muted text-lg" style="line-height: 1.9;">Implementamos nuevos sensores en el centro histórico para reducir el tráfico vehicular en un <strong class="text-white">20%</strong> utilizando inteligencia artificial conectada al sistema de semáforos inteligentes de la ciudad.</p>
+            </div>
+
+            <h2 class="text-white font-bold mb-3" style="font-size:1.6rem;">Red de Sensores Inteligentes</h2>
+            <p class="text-muted mb-4" style="line-height:1.8;">La nueva red instalada en el Centro Histórico consta de 280 nodos de sensores multimodales capaces de detectar la densidad vehicular, velocidad promedio, emisiones de CO₂ y temperatura ambiente. Toda esta información se transmite en tiempo real a nuestra plataforma de análisis mediante protocolo LoRaWAN-5G.</p>
+
+            <div class="glass-panel p-4 mb-4" style="border: 1px solid rgba(50,205,50,0.3); display:flex; gap:20px; align-items:center;">
+                <i class="fa-solid fa-car text-neon" style="font-size:2.5rem;"></i>
+                <div>
+                    <h4 class="text-white font-bold mb-1">Dato Clave</h4>
+                    <p class="text-muted text-sm">Reducción de 20% en el flujo vehicular en horas pico, con un tiempo de espera promedio por semáforo disminuido de 45s a 28s.</p>
+                </div>
+            </div>
+
+            <h2 class="text-white font-bold mb-3" style="font-size:1.6rem;">Sistema de Semáforos IA</h2>
+            <p class="text-muted mb-4" style="line-height:1.8;">El corazón del sistema es un modelo de Machine Learning entrenado con 3 años de datos históricos de tráfico. El algoritmo ajusta en tiempo real los tiempos de cada semáforo del corredor vial, priorizando vehículos de emergencia y creando "olas verdes" para el transporte público.</p>
+
+            <div class="row" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:2rem;">
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:160px;">
+                    <i class="fa-solid fa-traffic-light text-neon mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">280 Nodos</p>
+                    <p class="text-muted" style="font-size:0.75rem;">Sensores Activos</p>
+                </div>
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:160px;">
+                    <i class="fa-solid fa-arrow-trend-down text-neon mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">-20% Tráfico</p>
+                    <p class="text-muted" style="font-size:0.75rem;">Hora pico</p>
+                </div>
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:160px;">
+                    <i class="fa-solid fa-clock text-blue mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">-38% Espera</p>
+                    <p class="text-muted" style="font-size:0.75rem;">Por semáforo</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                <a href="{% url 'blog' %}" class="btn-cyber-outline"><i class="fa-solid fa-arrow-left mr-2"></i> Volver al Blog</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

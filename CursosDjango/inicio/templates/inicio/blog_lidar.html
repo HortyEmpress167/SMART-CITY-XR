@@ -1,0 +1,65 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | ¿Qué es el Escaneo Digital LiDAR?{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+
+    <!-- BANNER ARTÍCULO -->
+    <div style="position: relative; height: 380px; overflow: hidden; border-bottom: 2px solid var(--accent-blue);">
+        <!-- Fondo oscuro sin imagen -->
+        <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(6,11,25,1) 0%, transparent 60%);"></div>
+        <div class="container" style="position:absolute; bottom:40px; left:50%; transform:translateX(-50%); width:95%;">
+            <span class="badge" style="background:rgba(0,0,0,0.6); border:1px solid var(--accent-blue); color:var(--accent-blue); margin-bottom:12px; display:inline-block;">Educación</span>
+            <h1 class="text-white font-bold" style="font-size: 2.8rem; line-height:1.2; max-width:750px;">¿Qué es el Escaneo Digital LiDAR?</h1>
+            <p class="text-muted mt-2"><i class="far fa-calendar-alt mr-1"></i> Hace 1 semana &nbsp;·&nbsp; 7 min de lectura</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <section class="pb-5 pt-5">
+        <div class="container animate-fade-in" style="max-width: 820px;">
+
+            <div class="glass-panel p-5 mb-4" style="border-left: 4px solid var(--accent-blue);">
+                <p class="text-muted text-lg" style="line-height: 1.9;">Descubre cómo los drones y sistemas láser están mapeando nuestras ciudades para crear gemelos digitales perfectos y ayudar en la mitigación de problemas urbanos de manera <strong class="text-white">preventiva</strong>, antes de que se conviertan en emergencias costosas.</p>
+            </div>
+
+            <h2 class="text-white font-bold mb-3" style="font-size:1.6rem;">¿Cómo Funciona el LiDAR?</h2>
+            <p class="text-muted mb-4" style="line-height:1.8;">LiDAR (Light Detection and Ranging) es una tecnología que emite pulsos láser y mide el tiempo que tardan en rebotar en los objetos. Con millones de puntos de datos capturados por segundo, es capaz de generar nubes de puntos 3D de altísima precisión, con exactitud submilimétrica, convirtiendo edificios, calles y parques en modelos digitales perfectos.</p>
+
+            <div class="glass-panel p-4 mb-4" style="border: 1px solid rgba(0,180,255,0.3); display:flex; gap:20px; align-items:center;">
+                <i class="fa-solid fa-satellite text-blue" style="font-size:2.5rem;"></i>
+                <div>
+                    <h4 class="text-white font-bold mb-1">Dato Técnico</h4>
+                    <p class="text-muted text-sm">Nuestros drones LiDAR capturan hasta 1.2 millones de puntos por segundo con una precisión de ±2cm en entornos urbanos a 120m de altura.</p>
+                </div>
+            </div>
+
+            <h2 class="text-white font-bold mb-3" style="font-size:1.6rem;">Aplicaciones Urbanas</h2>
+            <p class="text-muted mb-4" style="line-height:1.8;">En Smart City XR utilizamos el escaneo LiDAR para detectar grietas en estructuras viales, mapear zonas de inundación potencial, documentar el patrimonio histórico en 3D y generar modelos de simulación para proyectos de nueva infraestructura, todo sin necesidad de interrumpir el flujo normal de la ciudad.</p>
+
+            <div class="row" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:2rem;">
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:150px;">
+                    <i class="fa-solid fa-drone text-blue mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">Drones LiDAR</p>
+                    <p class="text-muted" style="font-size:0.75rem;">12 unidades activas</p>
+                </div>
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:150px;">
+                    <i class="fa-solid fa-map-location-dot text-blue mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">240km²</p>
+                    <p class="text-muted" style="font-size:0.75rem;">Área mapeada</p>
+                </div>
+                <div class="glass-panel p-3 text-center" style="flex:1; min-width:150px;">
+                    <i class="fa-solid fa-cubes text-neon mb-2" style="font-size:1.8rem;"></i>
+                    <p class="text-white text-sm font-bold">±2cm</p>
+                    <p class="text-muted" style="font-size:0.75rem;">Precisión espacial</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                <a href="{% url 'blog' %}" class="btn-cyber-outline"><i class="fa-solid fa-arrow-left mr-2"></i> Volver al Blog</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

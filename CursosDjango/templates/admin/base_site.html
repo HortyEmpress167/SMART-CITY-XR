@@ -1,0 +1,182 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Portal Administrativo XR{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">
+    <span style="color: #00b4ff;">Centro de Datos</span>
+    <span style="color: rgba(50,205,50,0.9); text-shadow: 0 0 10px rgba(50,205,50,0.5);">XR</span>
+</a></h1>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    /* VARIABLES DE TEMA SMART CITY XR */
+    :root {
+        --bg-deep: #060b19;
+        --bg-panel: rgba(10, 25, 55, 0.7);
+        --text-main: #e2f1ff;
+        --accent-neon: rgba(50, 205, 50, 0.9);
+        --accent-blue: #00b4ff;
+        --accent-purple: #9d4edd;
+        --border-glass: rgba(0, 180, 255, 0.2);
+        
+        --primary: var(--accent-blue);
+        --secondary: var(--bg-panel);
+        --link-fg: var(--accent-neon);
+        --link-hover-color: #fff;
+        --header-color: #fff;
+        --header-bg: var(--bg-deep);
+        --header-link-color: var(--text-main);
+        --body-fg: var(--text-main);
+        --body-bg: var(--bg-deep);
+        --body-quiet-color: #8b9bb4;
+        --model-bg: rgba(6, 11, 25, 0.5);
+    }
+
+    /* REDEFINIR TODO EL BODY */
+    body {
+        font-family: 'Montserrat', sans-serif !important;
+        background-color: var(--bg-deep) !important;
+        color: var(--text-main) !important;
+        background-image: radial-gradient(circle at 10% 20%, rgba(0,180,255,0.05), transparent 40%),
+                          radial-gradient(circle at 90% 80%, rgba(50,205,50,0.05), transparent 40%);
+    }
+
+    /* HEADERS Y NAVEGACIÓN */
+    #header {
+        background: rgba(10, 25, 55, 0.8) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid var(--accent-neon);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        color: white !important;
+        padding: 10px 20px;
+    }
+    
+    #site-name a {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    div.breadcrumbs {
+        background: var(--bg-panel) !important;
+        border-bottom: 1px solid var(--border-glass) !important;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        color: #8b9bb4 !important;
+    }
+    div.breadcrumbs a {
+        color: var(--accent-blue) !important;
+        text-decoration: none;
+    }
+
+    /* PANELES Y CAJAS (GLASSMORPHISM) */
+    .module h2, .module caption, .inline-group h2 {
+        background: rgba(0, 180, 255, 0.1) !important;
+        border-left: 3px solid var(--accent-blue);
+        color: #fff !important;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .module table, .module {
+        background: var(--bg-panel) !important;
+        backdrop-filter: blur(5px);
+        border: 1px solid var(--border-glass) !important;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* TABLAS */
+    table thead th {
+        background: rgba(0,0,0,0.4) !important;
+        color: var(--accent-blue) !important;
+        font-family: 'Roboto Mono', monospace;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--accent-blue) !important;
+    }
+    
+    table tbody tr {
+        background: transparent !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        transition: background 0.3s ease;
+    }
+    
+    table tbody tr:hover {
+        background: rgba(50,205,50,0.1) !important;
+    }
+
+    table tbody tr td {
+        color: var(--text-main) !important;
+    }
+
+    a {
+        color: var(--accent-neon) !important;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: #fff !important;
+        text-shadow: 0 0 8px var(--accent-neon);
+    }
+
+    /* BOTONES */
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: transparent !important;
+        border: 1px solid var(--accent-blue) !important;
+        color: var(--accent-blue) !important;
+        border-radius: 4px;
+        padding: 8px 15px;
+        text-transform: uppercase;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .button.default, input[type=submit].default, .submit-row input.default {
+        background: rgba(50,205,50,0.1) !important;
+        border-color: var(--accent-neon) !important;
+        color: var(--accent-neon) !important;
+    }
+
+    .button:hover, input[type=submit]:hover, a.button:hover {
+        background: var(--accent-blue) !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px var(--accent-blue);
+    }
+
+    .button.default:hover, input[type=submit].default:hover {
+        background: var(--accent-neon) !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px var(--accent-neon);
+    }
+
+    /* FORMULARIOS */
+    input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select {
+        background: rgba(0,0,0,0.3) !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+        color: #fff !important;
+        border-radius: 4px;
+        padding: 8px;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: var(--accent-blue) !important;
+        box-shadow: 0 0 8px rgba(0,180,255,0.5) !important;
+        outline: none;
+    }
+
+    /* SIDEBAR (FILTROS) */
+    #changelist-filter {
+        background: var(--bg-panel) !important;
+        border-left: 1px solid var(--border-glass) !important;
+    }
+    #changelist-filter h2 {
+        background: rgba(157,78,221,0.2) !important;
+        border-left: 3px solid var(--accent-purple) !important;
+    }
+</style>
+{% endblock %}

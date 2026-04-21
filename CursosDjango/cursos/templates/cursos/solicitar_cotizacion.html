@@ -1,0 +1,126 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Solicitar Cotización de Proyecto{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 90vh; background: radial-gradient(circle at 50% 0%, rgba(138, 43, 226, 0.05), transparent 70%);">
+
+    <!-- HERO HEADER -->
+    <div style="position: relative; overflow: hidden; border-bottom: 2px solid #8a2be2; padding: 60px 0 50px;">
+        <div style="position: absolute; inset:0; background: radial-gradient(circle at 30% 50%, rgba(138, 43, 226, 0.08), transparent 60%), radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.06), transparent 50%); pointer-events:none;"></div>
+        <div class="container text-center relative" style="z-index:2;">
+            <div class="mb-3">
+                <span class="badge" style="background:rgba(138, 43, 226, 0.1); border:1px solid #8a2be2; color:#bf40bf; font-size:0.8rem; letter-spacing:2px; padding: 5px 15px; border-radius: 20px;">CONSULTORÍA XR</span>
+            </div>
+            <h1 class="text-white font-bold mb-3" style="font-size:3rem; letter-spacing:1px; text-transform: uppercase;">
+                Solicitar <span style="color: #ff00ff; text-shadow: 0 0 20px rgba(255, 0, 255, 0.5);">Cotización</span>
+            </h1>
+            <p class="text-muted mx-auto" style="font-size:1.1rem; max-width:600px; line-height:1.7;">
+                Inicia la transformación digital de tu entorno urbano. Cuéntanos sobre tu proyecto y nuestro equipo de analistas XR generará una propuesta técnica personalizada.
+            </p>
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <section class="pt-5 pb-5">
+        <div class="container animate-fade-in" style="max-width: 760px;">
+            <div class="glass-panel p-0" style="overflow:hidden; border: 1px solid rgba(138, 43, 226, 0.25); box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+
+                <!-- Barra superior del panel -->
+                <div style="background: rgba(138, 43, 226, 0.08); border-bottom: 1px solid rgba(138, 43, 226, 0.2); padding: 18px 30px; display:flex; align-items:center; gap:12px;">
+                    <i class="fa-solid fa-file-invoice-dollar" style="color: #ff00ff; font-size:1.3rem;"></i>
+                    <span class="text-white font-bold" style="letter-spacing:1px;">PROPUESTA TÉCNICA — GATEWAY SMART CITY</span>
+                    <div style="margin-left:auto; display:flex; gap:6px;">
+                        <span style="width:10px; height:10px; border-radius:50%; background:#ff5f57; display:inline-block;"></span>
+                        <span style="width:10px; height:10px; border-radius:50%; background:#ffbd2e; display:inline-block;"></span>
+                        <span style="width:10px; height:10px; border-radius:50%; background:#8a2be2; display:inline-block;"></span>
+                    </div>
+                </div>
+
+                <!-- Cuerpo del formulario -->
+                <div style="padding: 40px;">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <!-- Nombre -->
+                            <div class="form-group mb-4" style="flex: 1; min-width: 300px;">
+                                <label style="color:#ff00ff; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-user mr-1"></i> {{ form.nombre_solicitante.label }}
+                                </label>
+                                {{ form.nombre_solicitante }}
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group mb-4" style="flex: 1; min-width: 300px;">
+                                <label style="color:#ff00ff; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-envelope mr-1"></i> {{ form.email.label }}
+                                </label>
+                                {{ form.email }}
+                            </div>
+                        </div>
+
+                        <!-- Organización -->
+                        <div class="form-group mb-4">
+                            <label style="color:#8a2be2; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-building mr-1"></i> {{ form.organizacion.label }}
+                            </label>
+                            {{ form.organizacion }}
+                        </div>
+
+                        <!-- Servicio de Interés -->
+                        <div class="form-group mb-4">
+                            <label style="color:#8a2be2; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-microchip mr-1"></i> {{ form.servicio_interes.label }}
+                            </label>
+                            {{ form.servicio_interes }}
+                        </div>
+
+                        <!-- Alcance y Presupuesto -->
+                        <div class="row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                            <div class="form-group mb-4" style="flex: 1; min-width: 250px;">
+                                <label style="color:#8a2be2; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-earth-americas mr-1"></i> {{ form.alcance_proyecto.label }}
+                                </label>
+                                {{ form.alcance_proyecto }}
+                            </div>
+                            <div class="form-group mb-4" style="flex: 1; min-width: 250px;">
+                                <label style="color:#8a2be2; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                    <i class="fa-solid fa-hand-holding-dollar mr-1"></i> {{ form.presupuesto_aprox.label }}
+                                </label>
+                                {{ form.presupuesto_aprox }}
+                            </div>
+                        </div>
+
+                        <!-- Detalles -->
+                        <div class="form-group mb-5">
+                            <label style="color:#ff00ff; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; display:block;">
+                                <i class="fa-solid fa-comment-dots mr-1"></i> {{ form.detalles_solicitud.label }}
+                            </label>
+                            {{ form.detalles_solicitud }}
+                        </div>
+
+                        <!-- Alerta info -->
+                        <div style="background:rgba(138, 43, 226, 0.06); border:1px solid rgba(138, 43, 226, 0.2); border-radius:8px; padding:15px 20px; margin-bottom:30px; display:flex; gap:12px; align-items:flex-start;">
+                            <i class="fa-solid fa-circle-info mt-1" style="color: #ff00ff;"></i>
+                            <p class="text-muted text-xs" style="line-height:1.6; margin:0;">
+                                Una vez enviada, su solicitud será procesada por nuestro sistema de preventa técnica. Recibirá una respuesta preliminar en su correo electrónico en un plazo de <strong class="text-white">48 horas hábiles</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-between align-items-center pt-3" style="border-top:1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between;">
+                            <a href="{% url 'inicio' %}" class="btn-cyber-outline" style="border-color:rgba(255,255,255,0.2); color:var(--text-muted);">
+                                <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+                            </a>
+                            <button type="submit" class="btn-cyber" style="background:linear-gradient(135deg, #8a2be2, #ff00ff); border-color: #ff00ff; padding:12px 35px; font-size:1rem; box-shadow:0 0 20px rgba(138, 43, 226, 0.3);">
+                                <i class="fa-solid fa-paper-plane mr-1"></i> Enviar Solicitud de Cotización
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

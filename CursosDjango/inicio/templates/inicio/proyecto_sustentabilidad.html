@@ -1,0 +1,66 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block titulo %}Smart City XR | Red de Parques Inteligentes{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
+    <div class="container">
+        
+        <div class="glass-panel text-center mb-5 relative overflow-hidden" style="border-top: 4px solid var(--accent-green);">
+            <div style="position:absolute; inset:0; background: radial-gradient(circle at 50% 0%, rgba(50,205,50,0.1), transparent 70%); pointer-events:none;"></div>
+            <span class="badge badge-outline-green mb-3">Sustentabilidad Urbana</span>
+            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">Red de Parques <span class="text-neon">Inteligentes</span></h1>
+            <p class="text-muted mx-auto" style="max-width:700px; font-size:1.1rem; line-height:1.7;">
+                Preservación del microbioma urbano a través de la instalación de sensores ambientales de bajo consumo que regulan el riego y alertan sobre fluctuaciones de CO2 y temperatura.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="animate-fade-in delay-1">
+                <div class="glass-panel p-0 mb-4 overflow-hidden" style="border: 1px solid var(--accent-green);">
+                    <img src="/media/cursos_img/cat_parques.png" alt="Parques Verdes Inteligentes" style="width:100%; height:auto; display:block; filter: brightness(1.1) contrast(1.1);">
+                </div>
+                
+                <div class="glass-panel">
+                    <h4 class="text-white mb-3"><i class="fa-solid fa-leaf text-neon"></i> Monitoreo Botánico</h4>
+                    <ul style="list-style:none; padding:0; color:var(--text-main);">
+                        <li class="mb-2"><i class="fa-solid fa-droplet text-blue mr-2"></i> Control de humedad del suelo en tiempo real</li>
+                        <li class="mb-2"><i class="fa-solid fa-wind text-gray mr-2"></i> Lecturas continuas de PM2.5 y Calidad del Aire (ICA)</li>
+                        <li class="mb-2"><i class="fa-solid fa-sun text-yellow mr-2"></i> Paneles solares bi-faciales Node-12 para autoconsumo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="animate-fade-in delay-2">
+                <div class="glass-panel mb-4" style="border-left: 3px solid var(--accent-green);">
+                    <h4 class="text-white mb-4"><i class="fa-solid fa-tree text-neon"></i> Resumen Operativo</h4>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Parques Integrados a la Red</p>
+                        <h2 class="text-white font-bold m-0">47 <span class="text-neon text-sm">Espacios monitoreados</span></h2>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Ahorro en Agua de Riego</p>
+                        <h2 class="text-white font-bold m-0">34% <span class="text-blue text-sm">Optimizando aspersores por humedad</span></h2>
+                    </div>
+                    
+                    <div>
+                        <p class="text-muted text-xs mb-1">Alertas Botánicas Previas</p>
+                        <h2 class="text-white font-bold m-0">215 <span class="text-neon text-sm">Plagas prevenidas en 2025</span></h2>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <h5 class="text-white font-bold mb-2">Salud Urbana</h5>
+                    <p class="text-muted text-sm" style="line-height:1.6;">
+                        El Bosque Cuauhtémoc y el Parque Juárez operan como el pulmón principal de Morelia. Con esta red inteligente no solo evitamos el desperdicio hidro-sanitario, sino que medimos exactamente la cantidad de carbono capturado por metro cuadrado.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

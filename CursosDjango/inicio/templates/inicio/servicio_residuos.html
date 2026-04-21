@@ -1,0 +1,67 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Logística de Saneamiento{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+    <!-- Hero 3D Model Viewer -->
+    <div class="relative w-full overflow-hidden mb-5" style="height: 420px; border-bottom: 2px solid var(--accent-blue); position: relative;">
+        <!-- Fondo cyberpunk con rejilla azul -->
+        <div style="position:absolute;inset:0;background: radial-gradient(circle at 50% 40%, rgba(0,180,255,0.2) 0%, rgba(6,11,25,0.95) 70%), linear-gradient(rgba(0,180,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,255,0.07) 1px, transparent 1px); background-size: 100% 100%, 35px 35px, 35px 35px;"></div>
+        
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <model-viewer 
+            src="/media/modelos_3d/vialidad.glb"
+            auto-rotate rotation-per-second="25deg"
+            camera-controls shadow-intensity="1" exposure="1.1"
+            style="position:absolute;inset:0;width:100%;height:100%;background-color:transparent;">
+        </model-viewer>
+
+        <!-- Overlay degradado y texto superpuesto -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(13,17,23,1) 0%, rgba(13,17,23,0.5) 50%, transparent 100%);pointer-events:none;"></div>
+        <div class="container relative h-100 d-flex flex-column justify-content-end pb-5" style="z-index:10;pointer-events:none;">
+            <span class="badge mb-2" style="width:fit-content;background:rgba(0,0,0,0.6);border:1px solid var(--accent-blue);color:var(--accent-blue);backdrop-filter:blur(4px);"><i class="fa-solid fa-truck-fast mr-2"></i>Módulo Adicional</span>
+            <h1 class="font-bold text-white mb-2" style="font-size:3rem;text-shadow:0 0 20px rgba(0,180,255,0.5);">Logística de Saneamiento</h1>
+            <p class="text-blue" style="font-size:1.2rem;">Optimización Inteligente de Residuos · (Arrastra para explorar)</p>
+        </div>
+    </div>
+
+    <section class="pb-5">
+        <div class="container animate-fade-in">
+            <div class="glass-panel p-5 mb-5" style="border-left: 4px solid var(--accent-blue);">
+                <h3 class="text-white mb-4">Gestión Autónoma y Ecológica</h3>
+                <p class="text-muted text-lg mb-4" style="line-height: 1.8;">
+                    Este módulo adicional permite visualizar y rastrear en tiempo real la flota de camiones recolectores eléctricos (EV) de la ciudad. A través de sensores geomáticos en los contenedores de basura, el sistema detecta cuáles requieren ser vaciados y calcula las rutas más eficientes.
+                </p>
+                <div class="row text-center mt-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-recycle text-neon mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">Reciclaje AI</h4>
+                            <p class="text-xs text-muted">Clasificación asistida por visión por computadora.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-route text-blue mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">Rutas Dinámicas</h4>
+                            <p class="text-xs text-muted">Algoritmos para reducir el tráfico de flotillas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 border-top-dark">
+                            <i class="fa-solid fa-leaf text-neon mb-3" style="font-size: 2rem;"></i>
+                            <h4 class="text-white mb-1">-35% CO2</h4>
+                            <p class="text-xs text-muted">Reducción comprobada en emisiones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="{% url 'servicios' %}" class="btn-cyber-outline"><i class="fa-solid fa-arrow-left mr-2"></i> Volver al Hub Central</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block titulo %}Smart City XR | SOC Municipal Morelia{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 120px; padding-bottom: 60px; min-height: 80vh;">
+    <div class="container">
+        
+        <div class="glass-panel text-center mb-5 relative overflow-hidden" style="border-top: 4px solid #ef4444;">
+            <div style="position:absolute; inset:0; background: radial-gradient(circle at 50% 0%, rgba(239,68,68,0.1), transparent 70%); pointer-events:none;"></div>
+            <span class="badge mb-3" style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; color:#ef4444;">Respuesta Inmediata & Seguridad</span>
+            <h1 class="text-white font-bold mb-3" style="font-size:2.8rem;">SOC Municipal <span style="color:#ef4444;">Morelia</span></h1>
+            <p class="text-muted mx-auto" style="max-width:700px; font-size:1.1rem; line-height:1.7;">
+                El núcleo absoluto del Gemelo Digital. Centro de Operaciones de Seguridad (SOC) interconectado con el C5 para prevenir amenazas virtuales y físicas en tiempo real.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="animate-fade-in delay-1">
+                <div class="glass-panel p-0 mb-4 overflow-hidden" style="border: 1px solid #ef4444;">
+                    <img src="/media/cursos_img/cat_soc.png" alt="Security Operations Center" style="width:100%; height:auto; display:block; filter: brightness(1.2) contrast(1.1);">
+                </div>
+                
+                <div class="glass-panel">
+                    <h4 class="text-white mb-3"><i class="fa-solid fa-shield-virus" style="color:#ef4444;"></i> Protocolos de Defensiva</h4>
+                    <ul style="list-style:none; padding:0; color:var(--text-main);">
+                        <li class="mb-2"><i class="fa-solid fa-user-secret text-gray mr-2"></i> Detección de patrones anómalos mediante Machine Learning</li>
+                        <li class="mb-2"><i class="fa-solid fa-video text-blue mr-2"></i> Integración SCADA de servicios críticos municipales</li>
+                        <li class="mb-2"><i class="fa-solid fa-unlock-keyhole text-neon mr-2"></i> Mitigación activa de ataques DDoS 24/7/365</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="animate-fade-in delay-2">
+                <div class="glass-panel mb-4" style="border-left: 3px solid #ef4444;">
+                    <h4 class="text-white mb-4"><i class="fa-solid fa-network-wired" style="color:#ef4444;"></i> Infraestructura Interconectada</h4>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Unidades C5 Enlazadas</p>
+                        <h2 class="text-white font-bold m-0">842 <span style="color:#ef4444;" class="text-sm">Cámaras inteligentes activas</span></h2>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p class="text-muted text-xs mb-1">Tiempo de Respuesta a Incidentes (TTR)</p>
+                        <h2 class="text-white font-bold m-0">< 13 <span class="text-blue text-sm">Segundos en ciberataques</span></h2>
+                    </div>
+                    
+                    <div>
+                        <p class="text-muted text-xs mb-1">Disponibilidad del Sistema Central</p>
+                        <h2 class="text-white font-bold m-0">99.99% <span class="text-neon text-sm">Uptime Operativo Redundante</span></h2>
+                    </div>
+                </div>
+
+                <div class="glass-panel">
+                    <h5 class="text-white font-bold mb-2">Garantía de Privacidad y Ética</h5>
+                    <p class="text-muted text-sm" style="line-height:1.6;">
+                        El SOC Municipal Morelia no solo centraliza datos visuales y de red, sino que aplica técnicas de difuminación facial a nivel de hardware para proteger la privacidad ciudadana antes de que el video siquiera llegue a los servidores, cumpliendo con los estándares IRAM e ISO 27001.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

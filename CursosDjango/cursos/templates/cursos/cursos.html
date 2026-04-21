@@ -1,0 +1,206 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+{% block titulo %}Smart City XR | Inicio{% endblock %}
+
+{% block contenido %}
+<style>
+    /* Animaciones suaves de entrada */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        opacity: 0;
+    }
+
+    .delay-1 {
+        animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+        animation-delay: 0.3s;
+    }
+
+    .delay-3 {
+        animation-delay: 0.5s;
+    }
+
+    /* Efectos para las tarjetas (Features) */
+    .feature-card {
+        transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        padding: 25px 20px;
+        border-radius: 12px;
+        background: transparent;
+        cursor: default;
+    }
+
+    .feature-card:hover {
+        background: rgba(255, 255, 255, 0.02);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contenedor de la imagen con borde y brillo sutil */
+    .image-container {
+        transition: all 0.4s ease;
+        overflow: hidden;
+        border-radius: 6px;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .feature-card:hover .image-container {
+        border-color: rgba(0, 255, 136, 0.4);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+
+    .image-container img {
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+        opacity: 0.75;
+    }
+
+    .feature-card:hover .image-container img {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    /* Degradado metálico para el título */
+    .text-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #a0a6b5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Animación en la línea divisoria */
+    .feature-divider {
+        transition: width 0.4s ease, border-color 0.4s ease;
+        width: 100%;
+        margin: 0 auto 18px auto;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .feature-card:hover .feature-divider {
+        width: 50px;
+        /* Se contrae de forma elegante */
+        border-color: rgba(0, 255, 136, 0.6);
+    }
+
+    /* Botón flotante */
+    .btn-hero {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hero:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25);
+    }
+</style>
+
+<main class="container-fluid p-0">
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-intro text-center animate-fade-in"
+        style="padding: 100px 20px 80px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); background: radial-gradient(circle at top center, rgba(255,255,255,0.02) 0%, transparent 60%);">
+        <div class="container">
+            <h1 class="mb-4 text-gradient"
+                style="font-size: 2.6rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; line-height: 1.2;">
+                Liderando el urbanismo<br>del futuro
+            </h1>
+            <p class="text-muted mb-5 mx-auto" style="font-size: 1.2rem; font-weight: 400; max-width: 600px;">
+                Innovación y tecnología inmersiva para la planificación de Ciudades Inteligentes
+            </p>
+            <div class="d-flex justify-content-center gap-3 mt-4" style="gap: 15px;">
+                <a href="{% url 'catalogo' %}" class="btn-cyber btn-hero"
+                    style="display: inline-block; padding: 14px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 4px;">
+                    Ver Catálogo
+                </a>
+                <a href="{% url 'reportes:lista_problemas' %}" class="btn-cyber btn-hero"
+                    style="display: inline-block; padding: 14px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 4px; background: linear-gradient(135deg, rgba(0, 255, 136, 0.8) 0%, rgba(50, 205, 50, 0.8) 100%); border-color: rgba(50, 205, 50, 0.5); box-shadow: 0 0 15px rgba(50, 205, 50, 0.2);">
+                    Reportes Ciudadanos
+                </a>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <a href="{% url 'reportes:solicitar_cotizacion' %}" class="btn-cyber btn-hero"
+                    style="display: inline-block; padding: 14px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 4px; background: linear-gradient(135deg, #8a2be2, #ff00ff); border-color: #ff00ff; box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);">
+                    <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Solicitar Cotización
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="text-center pt-5 pb-5">
+        <div class="container">
+            <div class="row"
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;">
+
+                <!-- Diseño 3D -->
+                <div class="feature-card animate-fade-in delay-1" style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <a href="{% url 'catalogo' %}" class="image-container"
+                            style="width: 300px; height: 150px; padding: 4px; display: block; cursor: pointer;">
+                            <img src="/media/cursos_img/image.png" alt="Diseño 3D"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;">
+                        </a>
+                    </div>
+                    <hr class="feature-divider">
+                    <h3 class="text-white"
+                        style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">Diseño
+                        3D</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; margin: 0; font-weight: 300;">Modelos Urbanos 3D
+                    </p>
+                </div>
+
+                <!-- Sustentabilidad -->
+                <div class="feature-card animate-fade-in delay-2" style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <a href="{% url 'servicio_parques' %}" class="image-container"
+                            style="width: 300px; height: 150px; padding: 4px; display: block; cursor: pointer;">
+                            <img src="/media/cursos_img/image copy.png" alt="Sustentabilidad"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;">
+                        </a>
+                    </div>
+                    <hr class="feature-divider">
+                    <h3 class="text-white"
+                        style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">
+                        Sustentabilidad</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; margin: 0; font-weight: 300;">Energía y Medio
+                        Ambiente</p>
+                </div>
+
+                <!-- Gestión Digital -->
+                <div class="feature-card animate-fade-in delay-3" style="flex: 1; min-width: 250px;">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                        <a href="{% url 'servicio_iot' %}" class="image-container"
+                            style="width: 300px; height: 150px; padding: 4px; display: block; cursor: pointer;">
+                            <img src="/media/cursos_img/image copy 2.png" alt="Gestión Digital"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;">
+                        </a>
+                    </div>
+                    <hr class="feature-divider">
+                    <h3 class="text-white"
+                        style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;">Gestión
+                        Digital</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; margin: 0; font-weight: 300;">Plataforma
+                        Inteligente</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

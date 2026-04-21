@@ -1,0 +1,65 @@
+{% extends 'inicio/base.html' %}
+
+{% block titulo %}Smart City XR | Planificación Vial{% endblock %}
+
+{% block contenido %}
+<div style="padding-top: 100px; min-height: 80vh;">
+    <!-- HEROS SECTION -->
+    <section class="relative pt-5 pb-5 overflow-hidden">
+    <!-- Fondo oscuro o transparente (imagen removida) -->
+        
+        <div class="container text-center text-white">
+            <span class="badge badge-blue mb-3">Servicio Profesional</span>
+            <h1 class="mb-3 font-bold" style="font-size: 3rem;">Planificación Vial <span class="text-blue">3D</span></h1>
+            <p class="text-muted mx-auto mb-4" style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                Simulación interactiva para optimizar el tráfico, prever embotellamientos y rediseñar intersecciones conflictivas utilizando interfaces de realidad extendida (XR).
+            </p>
+            
+            <!-- Visor 3D "Vialidad" -->
+            <div class="mx-auto mb-5 glass-panel p-0" style="max-width: 850px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 180, 255, 0.3); box-shadow: 0 10px 40px rgba(0, 180, 255, 0.15);">
+                <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+                <div style="position: relative; width: 100%; height: 400px; background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.25) 0%, rgba(6, 11, 25, 0.8) 100%), linear-gradient(rgba(0, 180, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 180, 255, 0.1) 1px, transparent 1px); background-size: 100% 100%, 30px 30px, 30px 30px;">
+                    
+                    <model-viewer 
+                        src="/media/modelos_3d/vialidad.glb" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        camera-controls 
+                        shadow-intensity="1"
+                        exposure="1.2"
+                        style="width: 100%; height: 100%; background-color: transparent;">
+                    </model-viewer>
+                    
+                    <!-- Etiqueta Flotante Decorativa -->
+                    <div style="position: absolute; bottom: 15px; left: 15px; pointer-events: none;">
+                        <span class="badge" style="background: rgba(0,0,20,0.8); border: 1px solid var(--accent-blue); color: var(--accent-blue); backdrop-filter: blur(5px); padding: 6px 12px; font-weight: 500; box-shadow: 0 0 10px rgba(0,180,255,0.4);"><i class="fa-solid fa-car-burst mr-2"></i> Simulador 3D · Red Vial Operativa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center gap-4 mt-5">
+                <div class="glass-panel" style="width: 250px;">
+                    <i class="fa-solid fa-car-burst text-neon mb-2" style="font-size: 2rem;"></i>
+                    <h3 class="font-bold text-white mb-1">-40%</h3>
+                    <p class="text-sm text-muted m-0">Accidentes Proyectados</p>
+                </div>
+                <div class="glass-panel" style="width: 250px;">
+                    <i class="fa-solid fa-stopwatch text-blue mb-2" style="font-size: 2rem;"></i>
+                    <h3 class="font-bold text-white mb-1">+25%</h3>
+                    <p class="text-sm text-muted m-0">Fluidez Vehicular</p>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <a href="{% url 'contacto' %}" class="btn-cyber btn-hero" style="padding: 15px 40px; font-size: 1.1rem;">
+                    Solicitar Simulación Vial <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="mt-5 text-left display-flex justify-content-center text-center">
+                 <a href="{% url 'servicios' %}" class="text-muted" style="text-decoration: underline;"><i class="fa-solid fa-arrow-left"></i> Volver a Servicios</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
